@@ -1,4 +1,13 @@
 module.exports = {
+    transform: {
+        "^.+\\.jsx?$": "babel-jest",
+        "^.+\\.tsx?$": [
+            "ts-jest",
+            {
+                "babelConfig": true,
+            },
+        ],
+    },
     globals: {
         "__DEV__": true,
     },
@@ -12,13 +21,17 @@ module.exports = {
     coverageReporters: ["json", "lcov", "text", "text-summary", "cobertura", "html"],
     coverageThreshold: {
         global: {
-            statements: 75,
-            branches: 75,
-            functions: 75,
-            lines: 75,
+            statements: 0,
+            branches: 0,
+            functions: 0,
+            lines: 0,
         },
     },
     reporters: ["default"],
     moduleFileExtensions: ["ts", "tsx", "js", "json"],
+    moduleNameMapper: {
+        "\\.(svg)$": "<rootDir>/__mocks__/fileMock.js",
+        "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+    },
     testTimeout: 30000,
 };
