@@ -7,6 +7,9 @@
     "public/**"
   ],
   "scripts": {
+    "format": "prettier --write ./src/**/*.{ts,tsx,css}",
+    "format-check": "prettier -c ./src/**/*.{ts,tsx} || exit 1",
+    "lint": "eslint ./src/**/*.{ts,tsx} && npm run format-check",
     "start": "tsc && webpack serve --mode development",
     "build": "tsc && webpack --mode production"
   },
@@ -20,6 +23,7 @@
     "@babel/preset-env": "^7.28.0",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
+    "@eslint/js": "^9.30.1",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",
@@ -30,10 +34,17 @@
     "@types/react-dom": "^19.1.6",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
+    "eslint": "^9.30.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.5.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
     "html-webpack-plugin": "^5.6.3",
+    "prettier": "3.6.2",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.2",
     "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.1",
     "webpack": "^5.99.9",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.2"
@@ -46,14 +57,11 @@
   },
   "browserslist": {
     "production": [
-      ">0.2%",
-      "not dead",
+      "defaults",
       "not op_mini all"
     ],
     "development": [
-      "last 3 chrome versions",
-      "last 3 firefox versions",
-      "last 3 safari versions"
+      "defaults"
     ]
   }
 }

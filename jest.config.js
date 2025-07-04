@@ -8,10 +8,7 @@ module.exports = {
     collectCoverage: true,
     coverageDirectory: "build/coverage",
     collectCoverageFrom: ["<rootDir>/**/*.{ts,tsx}"],
-    coveragePathIgnorePatterns: [
-        "/node_modules/",
-        "/__tests__/",
-    ],
+    coveragePathIgnorePatterns: ["/node_modules/", "/__tests__/"],
     coverageReporters: ["json", "lcov", "text", "text-summary", "cobertura", "html"],
     coverageThreshold: {
         global: {
