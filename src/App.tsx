@@ -6,7 +6,7 @@ const App = () => {
         <div className="app">
             <header className="app-header">
                 <img src={logo} className="app-logo" alt="logo" />
-                <h1 className="text-3xl font-bold underline">Hello World!</h1>
+                <h1 className="text-3xl font-bold text-red-300 underline">Hello World!</h1>
                 <p>
                     Edit <code>src/App.js</code> and save to reload.
                 </p>
