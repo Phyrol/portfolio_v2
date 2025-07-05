@@ -52,6 +52,7 @@
     "style-loader": "^4.0.0",
     "stylelint": "^16.21.1",
     "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-tailwindcss": "^1.0.0",
     "tailwindcss": "^4.1.11",
     "ts-jest": "^29.4.0",
     "ts-loader": "^9.5.2",
