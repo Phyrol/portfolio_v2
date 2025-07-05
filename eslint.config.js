@@ -9,6 +9,7 @@ const files = ["src/**/*.{ts,tsx}"];
 const ignores = ["*.{js,jsx}", "node_modules/*", "public/*"];
 
 module.exports = tseslint.config(
+    {settings: {react: {version: "detect"}}},
     {files},
     {ignores},
     eslint.configs.recommended,
@@ -32,6 +33,7 @@ module.exports = tseslint.config(
             "react/no-children-prop": "off",
             "react/no-deprecated": "off",
             "react/display-name": "off",
+            "react/react-in-jsx-scope": "off", // With React 17+ the React import is automatic, so this rule is obsolete
             "react-hooks/rules-of-hooks": "error",
             "react-hooks/exhaustive-deps": "warn",
             "prefer-const": "off",

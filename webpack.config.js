@@ -8,7 +8,9 @@ module.exports = (env, argv) => {
             main: path.resolve(__dirname, "src/index.tsx"),
         },
         output: {
-            path: path.resolve(__dirname, "public"),
+            path: path.resolve(__dirname, "dist"),
+            clean: true,
+            publicPath: "/",
         },
         resolve: {
             extensions: [".tsx", ".ts", ".jsx", ".js"],
@@ -28,7 +30,7 @@ module.exports = (env, argv) => {
                 },
                 {
                     test: /\.css$/i,
-                    use: ["style-loader", "css-loader"],
+                    use: ["style-loader", "css-loader", "postcss-loader"],
                 },
                 {
                     test: /\.svg$/,
@@ -42,7 +44,9 @@ module.exports = (env, argv) => {
             }),
         ],
         devServer: {
-            static: "./dist",
+            static: {
+                directory: path.resolve(__dirname, "public"),
+            },
             hot: true,
             port: 3000,
         },
