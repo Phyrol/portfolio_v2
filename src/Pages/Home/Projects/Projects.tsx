@@ -126,7 +126,7 @@ const PROJECT_INFO: ProjectInfo[] = [
 const Projects = () => {
     return (
         <section>
-            <h1>Projects</h1>
+            <h2>Projects</h2>
 
             {PROJECT_INFO.map(
                 ({title, skills, shippedDate, teamSize, platform, position, genre, githubLink, downloadLink, thumbnailImage}) => (
@@ -143,8 +143,12 @@ const Projects = () => {
                                     <span>{skill}</span>
                                 ))}
                             </li>
-                            <a href={githubLink}>Github</a>
-                            <a href={downloadLink}>Download</a>
+                            <a href={githubLink} target={"_blank"} rel="noreferrer">
+                                Github
+                            </a>
+                            <a href={downloadLink} target={"_blank"} rel="noreferrer">
+                                Download
+                            </a>
                             <img src={thumbnailImage} />
                         </ul>
                     </div>

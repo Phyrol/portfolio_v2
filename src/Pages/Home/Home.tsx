@@ -5,8 +5,8 @@ import Work from "./Work/Work";
 
 const Home = () => {
     return (
-        <main>
-            <section className="min-h-96">
+        <main className="space-y-24">
+            <section>
                 <span className="flex-col">
                     <p>Hi, my name is</p>
                     <h1>Bradley Potzka</h1>

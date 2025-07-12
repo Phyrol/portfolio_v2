@@ -66,29 +66,31 @@ const WORK_HISTORY: WorkInfo[] = [
 const Work = () => {
     return (
         <section>
-            <h1>Work</h1>
-            {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => {
-                return (
-                    <div>
-                        <h2>{company}</h2>
-                        <h3>{position}</h3>
-                        <a href={link} />
-                        <h4>{dateRange}</h4>
-                        <div>
-                            {responsibilities.map(responsibility => (
-                                <p>{responsibility}</p>
+            <h2>Work</h2>
+
+            {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => (
+                <div key={company} className="mb-4">
+                    <span className="flex min-w-full text-2xl">
+                        {position}
+                        <a href={link} target={"_blank"} rel="noreferrer">
+                            {company}
+                        </a>
+                    </span>
+                    <p>{dateRange}</p>
+                    <ul className="space-y-4">
+                        {responsibilities.map((responsibility, index) => (
+                            <li key={`${company}-responsibility-${index}`}>{responsibility}</li>
+                        ))}
+                    </ul>
+                    {skills && (
+                        <ul className="flex space-x-4">
+                            {skills.map((skill, index) => (
+                                <li key={`${company}-skill-${index}`}>{skill}</li>
                             ))}
-                        </div>
-                        {skills && (
-                            <div>
-                                {skills.map(skill => (
-                                    <span>{skill}</span>
-                                ))}
-                            </div>
-                        )}
-                    </div>
-                );
-            })}
+                        </ul>
+                    )}
+                </div>
+            ))}
         </section>
     );
 };

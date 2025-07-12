@@ -8,7 +8,7 @@ const App = () => {
 
             {/* TODO: Finalize footer component */}
             <footer>
-                <div>
+                <div className="flex min-w-full justify-center">
                     <a href="https://github.com/Phyrol/portfolio" target={"_blank"} rel="noreferrer">
                         Built by Bradley Potzka
                     </a>
