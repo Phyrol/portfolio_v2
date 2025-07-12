@@ -1,5 +1,6 @@
 import AboutMe from "./AboutMe/AboutMe";
 import "./Home.css";
+import Projects from "./Projects/Projects";
 import Work from "./Work/Work";
 
 const Home = () => {
@@ -16,6 +17,8 @@ const Home = () => {
             <AboutMe />
 
             <Work />
+
+            <Projects />
         </main>
     );
 };

@@ -66,11 +66,12 @@ const WORK_HISTORY: WorkInfo[] = [
 const Work = () => {
     return (
         <section>
+            <h1>Work</h1>
             {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => {
                 return (
                     <div>
-                        <h1>{company}</h1>
-                        <h2>{position}</h2>
+                        <h2>{company}</h2>
+                        <h3>{position}</h3>
                         <a href={link} />
                         <h4>{dateRange}</h4>
                         <div>
