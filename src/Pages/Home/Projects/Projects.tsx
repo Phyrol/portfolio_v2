@@ -7,6 +7,7 @@ import HYPER_LOOP from "assets/projects/HYPER_LOOP.png";
 import THE_BLOB from "assets/projects/THE_BLOB.png";
 import WRONG_TURN from "assets/projects/WRONG_TURN.png";
 import CYBOB from "assets/projects/CYBOB.png";
+import SkillsList from "common/components/SkillsList";
 
 interface ProjectInfo {
     title: string;
@@ -140,7 +141,7 @@ const Projects = () => {
 
             {PROJECT_INFO.map(
                 ({title, skills, shippedDate, teamSize, platform, position, genre, githubLink, downloadLink, thumbnailImage}) => (
-                    <div key={title}>
+                    <div key={title} className="space-y-4">
                         <h2>{title}</h2>
                         <h5>{shippedDate.toString()}</h5>
                         <ul>
@@ -148,12 +149,10 @@ const Projects = () => {
                             <li>{teamSize}</li>
                             <li>{genre}</li>
                             <li>{platform}</li>
-                            <li className="space-x-4">
-                                {skills.map((skill, index) => (
-                                    <span key={`${title}-skill-${index}`}>{skill}</span>
-                                ))}
-                            </li>
                         </ul>
+
+                        <SkillsList skills={skills} />
+
                         <div className="flex space-x-4">
                             <a href={githubLink} target={"_blank"} rel="noreferrer">
                                 Github
