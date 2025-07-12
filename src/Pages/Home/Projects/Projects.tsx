@@ -148,19 +148,23 @@ const Projects = () => {
                             <li>{teamSize}</li>
                             <li>{genre}</li>
                             <li>{platform}</li>
-                            <li>
+                            <li className="space-x-4">
                                 {skills.map((skill, index) => (
                                     <span key={`${title}-skill-${index}`}>{skill}</span>
                                 ))}
                             </li>
+                        </ul>
+                        <div className="flex space-x-4">
                             <a href={githubLink} target={"_blank"} rel="noreferrer">
                                 Github
                             </a>
                             <a href={downloadLink} target={"_blank"} rel="noreferrer">
                                 Download
                             </a>
-                            <img src={thumbnailImage} />
-                        </ul>
+                        </div>
+                        <div className="origin-center skew-x-6">
+                            <img src={thumbnailImage} className="rounded-4xl" />
+                        </div>
                     </div>
                 )
             )}

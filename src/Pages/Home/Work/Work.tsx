@@ -69,13 +69,14 @@ const Work = () => {
             <h2>Work</h2>
 
             {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => (
-                <div key={company} className="mb-4">
-                    <span className="flex min-w-full text-2xl">
+                <div key={company} className="mb-4 space-y-2">
+                    <h3 className="inline min-w-full text-2xl">
                         {position}
-                        <a href={link} target={"_blank"} rel="noreferrer">
+                        <a href={link} target={"_blank"} rel="noreferrer" className="relative inline-block">
+                            &nbsp;@&nbsp;
                             {company}
                         </a>
-                    </span>
+                    </h3>
                     <p>{dateRange}</p>
                     <ul className="space-y-4">
                         {responsibilities.map((responsibility, index) => (
@@ -83,11 +84,16 @@ const Work = () => {
                         ))}
                     </ul>
                     {skills && (
-                        <ul className="flex space-x-4">
+                        <div className="flex space-x-4">
                             {skills.map((skill, index) => (
-                                <li key={`${company}-skill-${index}`}>{skill}</li>
+                                <p
+                                    key={`${company}-skill-${index}`}
+                                    className="bg-red-rojo/50 text-anti-flash-white rounded-2xl px-4 py-1 shadow-lg/30 ring-2 ring-red-500"
+                                >
+                                    {skill}
+                                </p>
                             ))}
-                        </ul>
+                        </div>
                     )}
                 </div>
             ))}

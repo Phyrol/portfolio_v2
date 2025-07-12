@@ -63,3 +63,19 @@ h3 {
 h4 {
     @apply text-3xl;
 }
+
+a {
+    @apply text-red-rojo;
+    &:hover {
+        @apply text-red-pantone;
+    }
+}
+
+li::before {
+    content: "▹";
+    @apply relative;
+    @apply pl-4;
+    @apply mb-10;
+    @apply -left-5;
+    @apply text-red-rojo;
+}
