@@ -6,10 +6,10 @@ const ABOUT_ME_DESCRIPTION =
 
 const AboutMe = () => {
     return (
-        <>
+        <section>
             <h2>About me</h2>
             <p>{ABOUT_ME_DESCRIPTION}</p>
-        </>
+        </section>
     );
 };
 

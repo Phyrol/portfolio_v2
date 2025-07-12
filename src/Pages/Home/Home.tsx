@@ -1,5 +1,6 @@
 import AboutMe from "./AboutMe/AboutMe";
 import "./Home.css";
+import Work from "./Work/Work";
 
 const Home = () => {
     return (
@@ -12,9 +13,9 @@ const Home = () => {
                 </span>
             </section>
 
-            <section>
-                <AboutMe />
-            </section>
+            <AboutMe />
+
+            <Work />
         </main>
     );
 };
