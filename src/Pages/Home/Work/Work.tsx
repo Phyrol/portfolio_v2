@@ -1,4 +1,4 @@
-import SkillsList from "../../../common/components/SkillsList";
+import SkillsList from "common/components/SkillsList";
 
 interface WorkInfo {
     company: string;

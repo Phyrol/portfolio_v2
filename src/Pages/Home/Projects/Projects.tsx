@@ -1,12 +1,12 @@
-import AEGIS_INITIATIVE from "../../../assets/projects/AEGIS_INITIATIVE.png";
-import MY_LITTLE_DARK_LORD from "../../../assets/projects/MY_LITTLE_DARK_LORD.png";
-import NIGHT_IN_THE_WOODS from "../../../assets/projects/NIGHT_IN_THE_WOODS.png";
-import ADVENTURE_TIME from "../../../assets/projects/ADVENTURE_TIME.png";
-import LUNCHBOX from "../../../assets/projects/LUNCHBOX.png";
-import HYPER_LOOP from "../../../assets/projects/HYPER_LOOP.png";
-import THE_BLOB from "../../../assets/projects/THE_BLOB.png";
-import WRONG_TURN from "../../../assets/projects/WRONG_TURN.png";
-import CYBOB from "../../../assets/projects/CYBOB.png";
+import AEGIS_INITIATIVE from "assets/projects/AEGIS_INITIATIVE.png";
+import MY_LITTLE_DARK_LORD from "assets/projects/MY_LITTLE_DARK_LORD.png";
+import NIGHT_IN_THE_WOODS from "assets/projects/NIGHT_IN_THE_WOODS.png";
+import ADVENTURE_TIME from "assets/projects/ADVENTURE_TIME.png";
+import LUNCHBOX from "assets/projects/LUNCHBOX.png";
+import HYPER_LOOP from "assets/projects/HYPER_LOOP.png";
+import THE_BLOB from "assets/projects/THE_BLOB.png";
+import WRONG_TURN from "assets/projects/WRONG_TURN.png";
+import CYBOB from "assets/projects/CYBOB.png";
 
 interface ProjectInfo {
     title: string;

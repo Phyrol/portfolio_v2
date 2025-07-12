@@ -1,7 +1,7 @@
-import AboutMe from "./AboutMe/AboutMe";
 import "./Home.css";
-import Projects from "./Projects/Projects";
-import Work from "./Work/Work";
+import AboutMe from "pages/Home/AboutMe/AboutMe";
+import Projects from "pages/Home/Projects/Projects";
+import Work from "pages/Home/Work/Work";
 
 const Home = () => {
     return (
