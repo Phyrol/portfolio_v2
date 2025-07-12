@@ -36,8 +36,16 @@ header {
     -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+    @apply px-50;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+section {
+    @apply space-y-6;
 }
 
 h1,
@@ -64,6 +72,10 @@ h4 {
     @apply text-3xl;
 }
 
+p {
+    @apply text-wrap;
+}
+
 a {
     @apply text-red-rojo;
     &:hover {
@@ -71,7 +83,7 @@ a {
     }
 }
 
-li::before {
+li > p::before {
     content: "▹";
     @apply relative;
     @apply pl-4;

@@ -9,29 +9,34 @@ import WRONG_TURN from "assets/projects/WRONG_TURN.png";
 import CYBOB from "assets/projects/CYBOB.png";
 import SkillsList from "common/components/SkillsList";
 
+interface Details {
+    position: string;
+    teamSize: number;
+    genre: string;
+    platform: string;
+}
+
 interface ProjectInfo {
     title: string;
     shippedDate: Date;
-    teamSize: number;
-    position: string;
-    platform: string;
-    genre: string;
-    githubLink: string;
-    downloadLink: string;
+    details: Details;
     skills: string[];
     thumbnailImage: string;
+    githubLink: string;
+    downloadLink: string;
 }
 
-// TODO: Add thumbnails
 const PROJECT_INFO: ProjectInfo[] = [
     {
         title: "Aegis Initiative",
         skills: ["Unity", "C#"],
         shippedDate: new Date("11/18/2021"),
-        teamSize: 20,
-        platform: "PC",
-        position: "Systems Producer/Engineer, worked on enemy movement, etc",
-        genre: "Shooter",
+        details: {
+            teamSize: 20,
+            platform: "PC",
+            position: "Systems Producer/Engineer, worked on enemy movement, etc",
+            genre: "Shooter",
+        },
         githubLink: "https://github.com/GDCASU/Firefox",
         downloadLink: "https://heatwave-studios.itch.io/aegis-initiative",
         thumbnailImage: AEGIS_INITIATIVE,
@@ -40,10 +45,12 @@ const PROJECT_INFO: ProjectInfo[] = [
         title: "My Little Dark Lord",
         skills: ["Unity", "C#"],
         shippedDate: new Date("11/30/2019"),
-        teamSize: 4,
-        platform: "PC",
-        position: "Gameplay engineer, focused on combat, enemy AI, and connecting different Unity Store assets",
-        genre: "Action RPG",
+        details: {
+            teamSize: 4,
+            platform: "PC",
+            position: "Gameplay engineer, focused on combat, enemy AI, and connecting different Unity Store assets",
+            genre: "Action RPG",
+        },
         githubLink: "https://github.com/MrSquakie/My-Little-Dark-Lord",
         downloadLink: "https://phyrol.itch.io/my-little-dark-lord",
         thumbnailImage: MY_LITTLE_DARK_LORD,
@@ -52,10 +59,12 @@ const PROJECT_INFO: ProjectInfo[] = [
         title: "Night in the Woods",
         skills: ["Unity", "C#"],
         shippedDate: new Date("01/27/2020"),
-        teamSize: 3,
-        platform: "PC",
-        position: "Team Lead/Gameplay Engineer, worked on the player, enemy AI, sound, and level details",
-        genre: "Shooter",
+        details: {
+            teamSize: 3,
+            platform: "PC",
+            position: "Team Lead/Gameplay Engineer, worked on the player, enemy AI, sound, and level details",
+            genre: "Shooter",
+        },
         githubLink: "https://github.com/Phyrol/Night-in-the-Woods",
         downloadLink: "https://phyrol.itch.io/night-in-the-woods",
         thumbnailImage: NIGHT_IN_THE_WOODS,
@@ -64,10 +73,12 @@ const PROJECT_INFO: ProjectInfo[] = [
         title: "Adventure Tim(e)",
         skills: ["GameMaker Studio 2", "GML"],
         shippedDate: new Date("10/30/2019"),
-        teamSize: 1,
-        platform: "PC",
-        position: "Sole creator",
-        genre: "Action",
+        details: {
+            teamSize: 1,
+            platform: "PC",
+            position: "Sole creator",
+            genre: "Action",
+        },
         githubLink: "https://github.com/Phyrol/Adventure_Tim-e-",
         downloadLink: "https://phyrol.itch.io/adventure-time",
         thumbnailImage: ADVENTURE_TIME,
@@ -76,10 +87,12 @@ const PROJECT_INFO: ProjectInfo[] = [
         title: "Lunchbox",
         skills: ["Unity", "C#"],
         shippedDate: new Date("07/20/2021"),
-        teamSize: 4,
-        platform: "PC",
-        position: "Gameplay Engineer, created main menu and helped with ship physics for floating on water with waves",
-        genre: "Adventure",
+        details: {
+            teamSize: 4,
+            platform: "PC",
+            position: "Gameplay Engineer, created main menu and helped with ship physics for floating on water with waves",
+            genre: "Adventure",
+        },
         githubLink: "https://github.com/Doughboy02/Lunchbox",
         downloadLink: "https://phyrol.itch.io/lunchbox",
         thumbnailImage: LUNCHBOX,
@@ -88,10 +101,12 @@ const PROJECT_INFO: ProjectInfo[] = [
         title: "HyperLoop",
         skills: ["Unity", "C#"],
         shippedDate: new Date("10/05/2020"),
-        teamSize: 5,
-        platform: "PC",
-        position: "Gameplay Engineer, created power-ups and traps for the player as well as the main/pause menus",
-        genre: "Platformer",
+        details: {
+            teamSize: 5,
+            platform: "PC",
+            position: "Gameplay Engineer, created power-ups and traps for the player as well as the main/pause menus",
+            genre: "Platformer",
+        },
         githubLink: "https://github.com/cdgonz115/LudumDare47_Speed3.0",
         downloadLink: "https://cg115.itch.io/hyperloop",
         thumbnailImage: HYPER_LOOP,
@@ -100,10 +115,13 @@ const PROJECT_INFO: ProjectInfo[] = [
         title: "The Blob",
         skills: ["Unity", "C#"],
         shippedDate: new Date("11/20/2019"),
-        teamSize: 2,
-        platform: "PC",
-        position: "Gameplay Engineer, created moving obstacles and the general gameplay loop of collecting gems before the timer runs out",
-        genre: "Platformer",
+        details: {
+            teamSize: 2,
+            platform: "PC",
+            position:
+                "Gameplay Engineer, created moving obstacles and the general gameplay loop of collecting gems before the timer runs out",
+            genre: "Platformer",
+        },
         githubLink: "https://github.com/MrSquakie/The-blob",
         downloadLink: "https://phyrol.itch.io/the-blob",
         thumbnailImage: THE_BLOB,
@@ -112,10 +130,12 @@ const PROJECT_INFO: ProjectInfo[] = [
         title: "Wrong Turn",
         skills: ["Unity", "C#"],
         shippedDate: new Date("01/27/2020"),
-        teamSize: 3,
-        platform: "PC",
-        position: "Team Lead/Gameplay Engineer, worked on enemy AI, player health system, level creation, and animations",
-        genre: "Survival",
+        details: {
+            teamSize: 3,
+            platform: "PC",
+            position: "Team Lead/Gameplay Engineer, worked on enemy AI, player health system, level creation, and animations",
+            genre: "Survival",
+        },
         githubLink: "https://github.com/Phyrol/Wrong-Turn",
         downloadLink: "https://phyrol.itch.io/wrong-turn",
         thumbnailImage: WRONG_TURN,
@@ -124,10 +144,12 @@ const PROJECT_INFO: ProjectInfo[] = [
         title: "CyBob",
         skills: ["Unity", "C#"],
         shippedDate: new Date("02/05/2020"),
-        teamSize: 3,
-        platform: "PC",
-        position: "Gameplay Engineer, created the enemy guard patrol/detection system, interactable objects, and shooting",
-        genre: "Action RPG",
+        details: {
+            teamSize: 3,
+            platform: "PC",
+            position: "Gameplay Engineer, created the enemy guard patrol/detection system, interactable objects, and shooting",
+            genre: "Action RPG",
+        },
         githubLink: "https://github.com/cdgonz115/Cybob",
         downloadLink: "https://phyrol.itch.io/cybob",
         thumbnailImage: CYBOB,
@@ -139,16 +161,22 @@ const Projects = () => {
         <section>
             <h2>Projects</h2>
 
-            {PROJECT_INFO.map(
-                ({title, skills, shippedDate, teamSize, platform, position, genre, githubLink, downloadLink, thumbnailImage}) => (
-                    <div key={title} className="space-y-4">
+            {PROJECT_INFO.map(({title, skills, shippedDate, details, githubLink, downloadLink, thumbnailImage}) => (
+                <div key={title} className="grid grid-cols-[200px_minmax(900px,_1fr)_100px] gap-4">
+                    <div>
+                        <div className="origin-center -skew-y-6">
+                            <img src={thumbnailImage} className="rounded-4xl" />
+                        </div>
+                    </div>
+                    <div className="flex flex-col space-y-4">
                         <h2>{title}</h2>
-                        <h5>{shippedDate.toString()}</h5>
+                        <h5>{shippedDate.getFullYear()}</h5>
                         <ul>
-                            <li>{position}</li>
-                            <li>{teamSize}</li>
-                            <li>{genre}</li>
-                            <li>{platform}</li>
+                            {Object.values(details).map(detail => (
+                                <li>
+                                    <p>{detail}</p>
+                                </li>
+                            ))}
                         </ul>
 
                         <SkillsList skills={skills} />
@@ -161,12 +189,9 @@ const Projects = () => {
                                 Download
                             </a>
                         </div>
-                        <div className="origin-center skew-x-6">
-                            <img src={thumbnailImage} className="rounded-4xl" />
-                        </div>
                     </div>
-                )
-            )}
+                </div>
+            ))}
         </section>
     );
 };
