@@ -1,5 +1,7 @@
+const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = (env, argv) => {
     return {
@@ -33,14 +35,31 @@ module.exports = (env, argv) => {
                     use: ["style-loader", "css-loader", "postcss-loader"],
                 },
                 {
-                    test: /\.svg$/,
+                    test: /\.(png|jpe?g|gif|svg)$/i,
                     type: "asset/resource", // emits the file
+                    generator: {
+                        filename: "assets/[name].[contenthash][ext][query]",
+                    },
                 },
             ],
         },
         plugins: [
             new HtmlWebpackPlugin({
                 template: "./public/index.html",
+            }),
+            new webpack.DefinePlugin({
+                "process.env.PUBLIC_URL": JSON.stringify(process.env.PUBLIC_URL || ""),
+            }),
+            new ImageMinimizerPlugin({
+                minimizer: {
+                    implementation: ImageMinimizerPlugin.imageminMinify,
+                    options: {
+                        plugins: [
+                            ["mozjpeg", {quality: 70}],
+                            ["pngquant", {quality: [0.6, 0.8]}],
+                        ],
+                    },
+                },
             }),
         ],
         devServer: {

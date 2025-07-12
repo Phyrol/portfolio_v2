@@ -1,3 +1,13 @@
+import AEGIS_INITIATIVE from "../../../assets/projects/AEGIS_INITIATIVE.png";
+import MY_LITTLE_DARK_LORD from "../../../assets/projects/MY_LITTLE_DARK_LORD.png";
+import NIGHT_IN_THE_WOODS from "../../../assets/projects/NIGHT_IN_THE_WOODS.png";
+import ADVENTURE_TIME from "../../../assets/projects/ADVENTURE_TIME.png";
+import LUNCHBOX from "../../../assets/projects/LUNCHBOX.png";
+import HYPER_LOOP from "../../../assets/projects/HYPER_LOOP.png";
+import THE_BLOB from "../../../assets/projects/THE_BLOB.png";
+import WRONG_TURN from "../../../assets/projects/WRONG_TURN.png";
+import CYBOB from "../../../assets/projects/CYBOB.png";
+
 interface ProjectInfo {
     title: string;
     shippedDate: Date;
@@ -23,7 +33,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Shooter",
         githubLink: "https://github.com/GDCASU/Firefox",
         downloadLink: "https://heatwave-studios.itch.io/aegis-initiative",
-        thumbnailImage: "",
+        thumbnailImage: AEGIS_INITIATIVE,
     },
     {
         title: "My Little Dark Lord",
@@ -35,7 +45,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Action RPG",
         githubLink: "https://github.com/MrSquakie/My-Little-Dark-Lord",
         downloadLink: "https://phyrol.itch.io/my-little-dark-lord",
-        thumbnailImage: "",
+        thumbnailImage: MY_LITTLE_DARK_LORD,
     },
     {
         title: "Night in the Woods",
@@ -47,7 +57,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Shooter",
         githubLink: "https://github.com/Phyrol/Night-in-the-Woods",
         downloadLink: "https://phyrol.itch.io/night-in-the-woods",
-        thumbnailImage: "",
+        thumbnailImage: NIGHT_IN_THE_WOODS,
     },
     {
         title: "Adventure Tim(e)",
@@ -59,7 +69,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Action",
         githubLink: "https://github.com/Phyrol/Adventure_Tim-e-",
         downloadLink: "https://phyrol.itch.io/adventure-time",
-        thumbnailImage: "",
+        thumbnailImage: ADVENTURE_TIME,
     },
     {
         title: "Lunchbox",
@@ -71,7 +81,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Adventure",
         githubLink: "https://github.com/Doughboy02/Lunchbox",
         downloadLink: "https://phyrol.itch.io/lunchbox",
-        thumbnailImage: "",
+        thumbnailImage: LUNCHBOX,
     },
     {
         title: "HyperLoop",
@@ -83,7 +93,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Platformer",
         githubLink: "https://github.com/cdgonz115/LudumDare47_Speed3.0",
         downloadLink: "https://cg115.itch.io/hyperloop",
-        thumbnailImage: "",
+        thumbnailImage: HYPER_LOOP,
     },
     {
         title: "The Blob",
@@ -95,7 +105,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Platformer",
         githubLink: "https://github.com/MrSquakie/The-blob",
         downloadLink: "https://phyrol.itch.io/the-blob",
-        thumbnailImage: "",
+        thumbnailImage: THE_BLOB,
     },
     {
         title: "Wrong Turn",
@@ -107,7 +117,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Survival",
         githubLink: "https://github.com/Phyrol/Wrong-Turn",
         downloadLink: "https://phyrol.itch.io/wrong-turn",
-        thumbnailImage: "",
+        thumbnailImage: WRONG_TURN,
     },
     {
         title: "CyBob",
@@ -119,7 +129,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         genre: "Action RPG",
         githubLink: "https://github.com/cdgonz115/Cybob",
         downloadLink: "https://phyrol.itch.io/cybob",
-        thumbnailImage: "",
+        thumbnailImage: CYBOB,
     },
 ];
 
@@ -130,7 +140,7 @@ const Projects = () => {
 
             {PROJECT_INFO.map(
                 ({title, skills, shippedDate, teamSize, platform, position, genre, githubLink, downloadLink, thumbnailImage}) => (
-                    <div>
+                    <div key={title}>
                         <h2>{title}</h2>
                         <h5>{shippedDate.toString()}</h5>
                         <ul>
@@ -139,8 +149,8 @@ const Projects = () => {
                             <li>{genre}</li>
                             <li>{platform}</li>
                             <li>
-                                {skills.map(skill => (
-                                    <span>{skill}</span>
+                                {skills.map((skill, index) => (
+                                    <span key={`${title}-skill-${index}`}>{skill}</span>
                                 ))}
                             </li>
                             <a href={githubLink} target={"_blank"} rel="noreferrer">
