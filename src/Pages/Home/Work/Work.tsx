@@ -1,10 +1,12 @@
+import SkillsList from "../../../common/components/SkillsList";
+
 interface WorkInfo {
     company: string;
     position: string;
     link: string;
     dateRange: string;
     responsibilities: string[];
-    skills?: string[];
+    skills: string[];
 }
 
 const WORK_HISTORY: WorkInfo[] = [
@@ -60,6 +62,7 @@ const WORK_HISTORY: WorkInfo[] = [
             "Excelled in effective and positive communication with faculty to resolve technical issues.",
             "Exhibited time management to complete project requirements.",
         ],
+        skills: [],
     },
 ];
 
@@ -83,18 +86,8 @@ const Work = () => {
                             <li key={`${company}-responsibility-${index}`}>{responsibility}</li>
                         ))}
                     </ul>
-                    {skills && (
-                        <div className="flex space-x-4">
-                            {skills.map((skill, index) => (
-                                <p
-                                    key={`${company}-skill-${index}`}
-                                    className="bg-red-rojo/50 text-anti-flash-white rounded-2xl px-4 py-1 shadow-lg/30 ring-2 ring-red-500"
-                                >
-                                    {skill}
-                                </p>
-                            ))}
-                        </div>
-                    )}
+
+                    <SkillsList skills={skills} />
                 </div>
             ))}
         </section>
