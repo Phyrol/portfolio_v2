@@ -4,7 +4,7 @@ export interface DetailsListProps {
 
 const DetailsList = ({details}: DetailsListProps) => {
     return (
-        <ul className="space-y-2">
+        <ul className="space-y-0.5">
             {details.map((detail, index) => (
                 <li key={`detail-${index}`} className="flex">
                     <p>{detail}</p>

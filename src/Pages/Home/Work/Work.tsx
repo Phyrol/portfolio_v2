@@ -73,8 +73,8 @@ const Work = () => {
             <h2>Work</h2>
 
             {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => (
-                <div key={company} className="mb-4 space-y-2 rounded-4xl p-4 hover:bg-red-500/20">
-                    <h3 className="inline min-w-full text-2xl">
+                <div key={company} className="mb-1 space-y-1 rounded-4xl p-4 hover:bg-red-500/20">
+                    <h3 className="inline text-2xl">
                         {position}
                         <a href={link} target={"_blank"} rel="noreferrer" className="relative inline-block">
                             &nbsp;@&nbsp;

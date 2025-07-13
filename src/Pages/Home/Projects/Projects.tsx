@@ -10,12 +10,20 @@ import CYBOB from "assets/projects/CYBOB.png";
 import SkillsList from "common/components/SkillsList";
 import DetailsList from "common/components/DetailsList";
 
+enum DetailKey {
+    SHIPPED_DATE = "shippedDate",
+    POSITION = "position",
+    TEAM_SIZE = "teamSize",
+    GENRE = "genre",
+    PLATFORM = "platform",
+}
+
 export interface Details {
-    shippedDate: string;
-    position: string;
-    teamSize: number;
-    genre: string;
-    platform: string;
+    [DetailKey.SHIPPED_DATE]: string;
+    [DetailKey.POSITION]: string;
+    [DetailKey.TEAM_SIZE]: number;
+    [DetailKey.GENRE]: string;
+    [DetailKey.PLATFORM]: string;
 }
 
 interface ProjectInfo {
@@ -157,6 +165,14 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
 ];
 
+const DETAIL_KEY_TO_PREFIX_MAP: {[key in DetailKey]: string} = {
+    [DetailKey.SHIPPED_DATE]: "Shipped:",
+    [DetailKey.POSITION]: "Position:",
+    [DetailKey.TEAM_SIZE]: "Team Size:",
+    [DetailKey.GENRE]: "Genre:",
+    [DetailKey.PLATFORM]: "Platform:",
+};
+
 const Projects = () => {
     return (
         <section>
@@ -177,7 +193,11 @@ const Projects = () => {
                     <div className="col-start-5 col-end-12">
                         <h2 className="mb-4">{title}</h2>
 
-                        <DetailsList details={Object.values(details)} />
+                        <DetailsList
+                            details={Object.entries(details).map(
+                                ([key, detail]) => `${DETAIL_KEY_TO_PREFIX_MAP[key as DetailKey]} ${detail}`
+                            )}
+                        />
 
                         <SkillsList skills={skills} />
 
