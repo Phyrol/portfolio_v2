@@ -9,6 +9,7 @@ import WRONG_TURN from "assets/projects/WRONG_TURN.png";
 import CYBOB from "assets/projects/CYBOB.png";
 import SkillsList from "common/components/SkillsList";
 import DetailsList from "common/components/DetailsList";
+import TiltElement from "../../../common/components/TiltElement";
 
 enum DetailKey {
     SHIPPED_DATE = "shippedDate",
@@ -181,14 +182,9 @@ const Projects = () => {
             {PROJECT_INFO.map(({title, skills, details, githubLink, downloadLink, thumbnailImage}) => (
                 <div key={title} className="grid grid-cols-[repeat(12,1fr)] gap-4">
                     <div className="col-start-1 col-end-5">
-                        <div className="bg-cadet-gray/25 rounded-4xl">
-                            {/* TODO: Finalize this hover effect */}
-                            <div className="origin-center transition-transform duration-150 hover:scale-105 hover:rotate-6 hover:skew-3">
-                                <a href={`${downloadLink}`} target={"_blank"} rel="noreferrer">
-                                    <img src={thumbnailImage} className="rounded-4xl" />
-                                </a>
-                            </div>
-                        </div>
+                        <TiltElement>
+                            <img src={thumbnailImage} alt={`${title} thumbnail`} className="block h-auto w-full rounded-3xl" />
+                        </TiltElement>
                     </div>
                     <div className="col-start-5 col-end-12">
                         <h2 className="mb-4">{title}</h2>
