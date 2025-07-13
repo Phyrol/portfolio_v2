@@ -10,12 +10,9 @@ const SkillsList = ({skills}: PillProps) => {
     return (
         <div className="flex flex-wrap space-x-4">
             {skills.map((skill, index) => (
-                <p
-                    key={`skill-${index}`}
-                    className="bg-red-rojo/50 text-anti-flash-white mt-4 rounded-2xl px-4 py-1 shadow-lg/30 ring-2 ring-red-500"
-                >
-                    {skill}
-                </p>
+                <div key={`skill-${index}`} className="bg-red-rojo/50 mt-4 rounded-2xl px-4 py-1 shadow-lg/30 ring-2 ring-red-500">
+                    <p className="text-anti-flash-white">{skill}</p>
+                </div>
             ))}
         </div>
     );

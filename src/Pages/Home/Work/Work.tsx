@@ -1,3 +1,4 @@
+import DetailsList from "common/components/DetailsList";
 import SkillsList from "common/components/SkillsList";
 
 interface WorkInfo {
@@ -72,7 +73,7 @@ const Work = () => {
             <h2>Work</h2>
 
             {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => (
-                <div key={company} className="mb-4 space-y-2">
+                <div key={company} className="mb-4 space-y-2 rounded-4xl p-4 hover:bg-red-500/20">
                     <h3 className="inline min-w-full text-2xl">
                         {position}
                         <a href={link} target={"_blank"} rel="noreferrer" className="relative inline-block">
@@ -80,12 +81,10 @@ const Work = () => {
                             {company}
                         </a>
                     </h3>
+
                     <p>{dateRange}</p>
-                    <ul className="space-y-4">
-                        {responsibilities.map((responsibility, index) => (
-                            <li key={`${company}-responsibility-${index}`}>{responsibility}</li>
-                        ))}
-                    </ul>
+
+                    <DetailsList details={responsibilities} />
 
                     <SkillsList skills={skills} />
                 </div>
