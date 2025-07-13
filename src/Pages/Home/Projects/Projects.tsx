@@ -183,7 +183,9 @@ const Projects = () => {
                 <div key={title} className="grid grid-cols-[repeat(12,1fr)] gap-4">
                     <div className="col-start-1 col-end-5">
                         <TiltElement enableGlare>
-                            <img src={thumbnailImage} alt={`${title} thumbnail`} className="block h-auto w-full rounded-3xl" />
+                            <a href={`${downloadLink}`} target={"_blank"} rel="noreferrer">
+                                <img src={thumbnailImage} alt={`${title} thumbnail`} className="block h-auto w-full rounded-3xl" />
+                            </a>
                         </TiltElement>
                     </div>
                     <div className="col-start-5 col-end-12">
