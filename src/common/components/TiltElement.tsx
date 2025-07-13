@@ -2,10 +2,12 @@ import {JSX, useCallback, useRef} from "react";
 
 export interface TiltElementProps {
     children: JSX.Element;
+    enableGlare?: boolean;
 }
 
-const TiltElement = ({children}: TiltElementProps) => {
+const TiltElement = ({children, enableGlare}: TiltElementProps) => {
     const elementRef = useRef<HTMLDivElement>(null);
+    const glareRef = useRef<HTMLDivElement>(null);
 
     const handleMouseMove = useCallback((e: React.MouseEvent) => {
         const el = elementRef.current;
@@ -21,16 +23,31 @@ const TiltElement = ({children}: TiltElementProps) => {
         const offsetX = (x / rect.width - 0.5) * 2;
         const offsetY = (y / rect.height - 0.5) * 2;
 
-        // Tilt toward the cursor
-        const rotateX = -offsetY * 10;
+        const rotateX = offsetY * -10;
         const rotateY = offsetX * 10;
 
         el.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+        if (enableGlare) {
+            const glare = glareRef.current;
+
+            if (!glare) {
+                return;
+            }
+
+            // Glare angle and opacity
+            const glareX = (x / rect.width) * 100;
+            const glareY = (y / rect.height) * 100;
+            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.35), transparent 60%)`;
+        }
     }, []);
 
     const resetTransform = useCallback(() => {
         if (elementRef.current) {
             elementRef.current.style.transform = "rotateX(0deg) rotateY(0deg)";
+        }
+        if (glareRef.current) {
+            glareRef.current.style.background = "none";
         }
     }, []);
 
@@ -42,6 +59,7 @@ const TiltElement = ({children}: TiltElementProps) => {
                 onMouseLeave={resetTransform}
                 className="transition-transform duration-200 ease-out hover:scale-105"
             >
+                {enableGlare && <div ref={glareRef} className="pointer-events-none absolute inset-0 z-10 rounded-3xl" />}
                 {children}
             </div>
         </div>
