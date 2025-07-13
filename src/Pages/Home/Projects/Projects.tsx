@@ -165,8 +165,13 @@ const Projects = () => {
             {PROJECT_INFO.map(({title, skills, details, githubLink, downloadLink, thumbnailImage}) => (
                 <div key={title} className="grid grid-cols-[repeat(12,1fr)] gap-4">
                     <div className="col-start-1 col-end-5">
-                        <div className="origin-center -skew-y-6">
-                            <img src={thumbnailImage} className="rounded-4xl" />
+                        <div className="bg-cadet-gray/25 rounded-4xl">
+                            {/* TODO: Finalize this hover effect */}
+                            <div className="origin-center transition-transform duration-150 hover:scale-105 hover:rotate-6 hover:skew-3">
+                                <a href={`${downloadLink}`} target={"_blank"} rel="noreferrer">
+                                    <img src={thumbnailImage} className="rounded-4xl" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <div className="col-start-5 col-end-12">
