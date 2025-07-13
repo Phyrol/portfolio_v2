@@ -1,5 +1,6 @@
 import DetailsList from "common/components/DetailsList";
 import SkillsList from "common/components/SkillsList";
+import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
 
 interface WorkInfo {
     company: string;
@@ -24,7 +25,18 @@ const WORK_HISTORY: WorkInfo[] = [
             "Took over and delivered a key feature (Safety Lever) and completed ORR, F&F, MCM, and final UX approvals for an on-time launch.",
             "Designed and led ESLint migration across the FIS Console package, replacing deprecated TSLint and enforcing standards through CR linting.",
         ],
-        skills: ["JavaScript", "TypeScript", "React", "Redux", "Node.js", "GraphQL", "SQL", "CSS", "Python"],
+        skills: [
+            Language.JAVASCRIPT,
+            Language.TYPESCRIPT,
+            Framework.REACT,
+            Library.REDUX,
+            Library.GRAPHQL,
+            Language.SQL,
+            Language.CSS,
+            Language.PYTHON,
+            RuntimeEnv.NODE_JS,
+            Tool.CYPRESS,
+        ],
     },
     {
         company: "Garmin - AeroData",
@@ -37,7 +49,7 @@ const WORK_HISTORY: WorkInfo[] = [
             "Extended functionality of current enterprise logging that utilizes Log4Net by modifying the existing library to use a TCP connection with serialization/deserialization to log events.",
             "Followed agile development with daily stand-up meetings to discuss sprint tasks and roadblocks.",
         ],
-        skills: ["JavaScript", "C#", "HTML", "ASP.NET"],
+        skills: [Language.JAVASCRIPT, Language.C_SHARP, Language.HTML, Framework.ASP_NET],
     },
     {
         company: "Heatwave Studio",
@@ -50,7 +62,7 @@ const WORK_HISTORY: WorkInfo[] = [
             "Communicated effectively to game directors during agile planning meetings.",
             "Coordinated with other engineers to implement desired game mechanics efficiently.",
         ],
-        skills: ["C#", "Unity"],
+        skills: [Language.C_SHARP, Tool.UNITY],
     },
     {
         company: "Mesa Public Schools",
