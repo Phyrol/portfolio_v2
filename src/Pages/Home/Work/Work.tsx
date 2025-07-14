@@ -1,4 +1,4 @@
-import DetailsList from "common/components/DetailsList";
+import BulletListItem from "common/components/BulletListItem";
 import SkillsList from "common/components/SkillsList";
 import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
 
@@ -96,7 +96,13 @@ const Work = () => {
 
                     <p>{dateRange}</p>
 
-                    <DetailsList details={responsibilities} />
+                    <ul className="space-y-0.5">
+                        {responsibilities.map((responsibility, index) => (
+                            <BulletListItem key={`detail-${index}`}>
+                                <p>{responsibility}</p>
+                            </BulletListItem>
+                        ))}
+                    </ul>
 
                     <SkillsList skills={skills} />
                 </div>
