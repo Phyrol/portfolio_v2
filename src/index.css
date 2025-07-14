@@ -14,7 +14,7 @@
 
 body,
 header {
-    background-color: var(--color-space-cadet);
+    background-color: var(--color-darkest-space-cadet);
     color: var(--color-cadet-gray);
     font-family:
         var(--font-sans),
@@ -70,23 +70,4 @@ h3 {
 
 h4 {
     @apply text-xl;
-}
-
-p {
-    @apply text-lg;
-}
-
-a {
-    @apply text-red-rojo;
-    &:hover {
-        @apply text-red-pantone;
-    }
-}
-
-li::before {
-    content: "▹";
-    @apply relative;
-    @apply pl-4;
-    @apply -left-5;
-    @apply text-red-rojo;
 }
