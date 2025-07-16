@@ -36,7 +36,6 @@ header {
 }
 
 main {
-    @apply px-50;
     @apply py-24;
 }
 
