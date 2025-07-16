@@ -36,7 +36,9 @@ header {
 }
 
 main {
-    @apply py-24;
+    @apply py-8;
+    @apply md:py-16;
+    @apply lg:py-24;
 }
 
 code {
@@ -50,7 +52,8 @@ section {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
     @apply text-anti-flash-white;
 }
 
@@ -69,4 +72,8 @@ h3 {
 
 h4 {
     @apply text-xl;
+}
+
+h5 {
+    @apply text-lg;
 }
