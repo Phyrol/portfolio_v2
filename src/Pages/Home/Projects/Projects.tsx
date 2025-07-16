@@ -165,7 +165,7 @@ const Projects = () => {
         <section>
             <h2>Projects</h2>
 
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(275px,_100%),_1fr))] place-items-stretch items-stretch gap-4">
+            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(275px,_100%),_1fr))] gap-4">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
                     <TiltElement enableGlare>
                         <a
@@ -176,15 +176,15 @@ const Projects = () => {
                             className="block h-full"
                         >
                             <div key={title} className="bg-light-space-cadet flex h-full flex-col rounded-3xl">
-                                <div className="h-40 overflow-hidden">
+                                <div className="aspect-[16/9] overflow-hidden">
                                     <img
                                         src={thumbnailImage}
                                         alt={`${title} thumbnail`}
-                                        className="h-full w-full rounded-t-3xl object-fill"
+                                        className="h-full w-full rounded-t-3xl object-cover"
                                     />
                                 </div>
                                 <div className="flex flex-1 flex-col px-4 pb-4">
-                                    <h3 className="mb-1">{title}</h3>
+                                    <h4 className="mb-1">{title}</h4>
 
                                     <ul className="grid grid-cols-2">
                                         {Object.entries(details).map(([detailKey, detail], index) => {
@@ -201,7 +201,7 @@ const Projects = () => {
                                     </ul>
 
                                     <div className="flex flex-1 flex-col place-content-between">
-                                        <p className="text-anti-flash-white text-lg">{position}</p>
+                                        <p className="text-anti-flash-white text-sm">{position}</p>
 
                                         <SkillsList skills={skills} />
                                     </div>
