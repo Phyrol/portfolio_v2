@@ -162,7 +162,7 @@ const PROJECT_INFO: ProjectInfo[] = [
 
 const Projects = () => {
     return (
-        <section>
+        <section className="space-y-6">
             <h2>Projects</h2>
 
             <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(300px,_100%),_1fr))] gap-4">

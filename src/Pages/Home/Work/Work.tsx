@@ -13,8 +13,8 @@ interface WorkInfo {
 
 const WORK_HISTORY: WorkInfo[] = [
     {
-        company: "Amazon Web Services (AWS)",
-        position: "Frontend Engineer II (promoted from L4) – SageMaker JumpStart & Fault Injection Service Console",
+        company: "Amazon Web Services (AWS), SageMaker JumpStart & Fault Injection Service Console",
+        position: "Frontend Engineer II (promoted from L4)",
         link: "https://aws.amazon.com/",
         dateRange: "2022 - Present",
         responsibilities: [
@@ -39,7 +39,7 @@ const WORK_HISTORY: WorkInfo[] = [
         ],
     },
     {
-        company: "Garmin - AeroData",
+        company: "Garmin, AeroData",
         position: "Software Engineer Intern",
         link: "https://www.aerodata.co/en-US/",
         dateRange: "2021",
@@ -81,25 +81,25 @@ const WORK_HISTORY: WorkInfo[] = [
 
 const Work = () => {
     return (
-        <section>
+        <section className="space-y-2">
             <h2>Work</h2>
 
             {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => (
                 <div key={company} className="mb-1 space-y-1 rounded-4xl p-4 hover:bg-red-500/20">
-                    <h3 className="inline text-2xl">
+                    <h4 className="inline">
                         {position}
                         <a href={link} target={"_blank"} rel="noreferrer" className="relative inline-block">
-                            &nbsp;@&nbsp;
+                            &nbsp;&mdash;&nbsp;
                             {company}
                         </a>
-                    </h3>
+                    </h4>
 
-                    <p>{dateRange}</p>
+                    <p className="text-base">{dateRange}</p>
 
-                    <ul className="space-y-0.5">
+                    <ul>
                         {responsibilities.map((responsibility, index) => (
                             <BulletListItem key={`detail-${index}`}>
-                                <p>{responsibility}</p>
+                                <p className="text-base">{responsibility}</p>
                             </BulletListItem>
                         ))}
                     </ul>
