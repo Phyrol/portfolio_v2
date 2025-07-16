@@ -52,12 +52,12 @@ const TiltElement = ({children, enableGlare}: TiltElementProps) => {
     }, []);
 
     return (
-        <div className="perspective-distant">
+        <div className="h-full perspective-distant">
             <div
                 ref={elementRef}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={resetTransform}
-                className="transition-transform duration-200 ease-out hover:scale-105"
+                className="h-full transition-transform duration-200 ease-out hover:scale-105"
             >
                 {enableGlare && <div ref={glareRef} className="pointer-events-none absolute inset-0 z-10 rounded-3xl" />}
                 {children}
