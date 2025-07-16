@@ -165,11 +165,11 @@ const Projects = () => {
         <section>
             <h2>Projects</h2>
 
-            <div className="grid grid-cols-[350px_350px] gap-4">
+            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(250px,_100%),_1fr))] place-items-stretch items-stretch gap-4">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
                     <TiltElement enableGlare>
                         <a href={downloadLink} target={"_blank"} rel="noreferrer" aria-label={`View more about ${title}`}>
-                            <div key={title} className="bg-space-cadet flex-col rounded-3xl">
+                            <div key={title} className="bg-light-space-cadet h-full flex-col rounded-3xl">
                                 <div className="h-40 overflow-hidden">
                                     <img
                                         src={thumbnailImage}
@@ -177,7 +177,7 @@ const Projects = () => {
                                         className="h-full w-full rounded-t-3xl object-fill"
                                     />
                                 </div>
-                                <div className="h-full px-4 pb-4">
+                                <div className="flex flex-col px-4 pb-4">
                                     <h3 className="mb-1">{title}</h3>
 
                                     <ul className="grid grid-cols-2">
