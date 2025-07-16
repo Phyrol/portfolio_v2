@@ -38,7 +38,7 @@ const TiltElement = ({children, enableGlare}: TiltElementProps) => {
             // Glare angle and opacity
             const glareX = (x / rect.width) * 100;
             const glareY = (y / rect.height) * 100;
-            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.35), transparent 60%)`;
+            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.10), transparent 50%)`;
         }
     }, []);
 

@@ -151,7 +151,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         details: {
             [DetailKey.SHIPPED_DATE]: "2020",
             [DetailKey.TEAM_SIZE]: "3",
-            [DetailKey.GENRE]: "Action RPG",
+            [DetailKey.GENRE]: "RPG",
             [DetailKey.PLATFORM]: "PC",
         },
         position: "Gameplay Engineer, created the enemy guard patrol/detection system, interactable objects, and shooting",
@@ -165,7 +165,7 @@ const Projects = () => {
         <section>
             <h2>Projects</h2>
 
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(275px,_100%),_1fr))] gap-4">
+            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(300px,_100%),_1fr))] gap-4">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
                     <TiltElement enableGlare>
                         <a
@@ -175,16 +175,19 @@ const Projects = () => {
                             aria-label={`View more about ${title}`}
                             className="block h-full"
                         >
-                            <div key={title} className="bg-light-space-cadet flex h-full flex-col rounded-3xl">
-                                <div className="aspect-[16/9] overflow-hidden">
+                            <div
+                                key={title}
+                                className="bg-lightest-space-cadet/50 inset-ring-red-pantone/50 flex h-full flex-col rounded-3xl inset-ring-1"
+                            >
+                                <div className="ring-red-pantone/50 aspect-[6/3] overflow-hidden p-3.5 md:aspect-[16/9]">
                                     <img
                                         src={thumbnailImage}
                                         alt={`${title} thumbnail`}
-                                        className="h-full w-full rounded-t-3xl object-cover"
+                                        className="ring-red-pantone/30 h-full w-full rounded-3xl object-cover ring-1"
                                     />
                                 </div>
                                 <div className="flex flex-1 flex-col px-4 pb-4">
-                                    <h4 className="mb-1">{title}</h4>
+                                    <h5 className="mb-1">{title}</h5>
 
                                     <ul className="grid grid-cols-2">
                                         {Object.entries(details).map(([detailKey, detail], index) => {
@@ -201,7 +204,7 @@ const Projects = () => {
                                     </ul>
 
                                     <div className="flex flex-1 flex-col place-content-between">
-                                        <p className="text-anti-flash-white text-sm">{position}</p>
+                                        <p className="text-cadet-gray text-sm">{position}</p>
 
                                         <SkillsList skills={skills} />
                                     </div>
