@@ -59,7 +59,7 @@ const PROJECT_INFO: ProjectInfo[] = [
         details: {
             [DetailKey.SHIPPED_DATE]: "2019",
             [DetailKey.TEAM_SIZE]: "4",
-            [DetailKey.GENRE]: "Action RPG",
+            [DetailKey.GENRE]: "RPG",
             [DetailKey.PLATFORM]: "PC",
         },
         position: "Gameplay engineer, focused on combat, enemy AI, and connecting various Unity Store assets",
@@ -165,7 +165,7 @@ const Projects = () => {
         <section>
             <h2>Projects</h2>
 
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(250px,_100%),_1fr))] place-items-stretch items-stretch gap-4">
+            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(275px,_100%),_1fr))] place-items-stretch items-stretch gap-4">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
                     <TiltElement enableGlare>
                         <a
@@ -192,7 +192,9 @@ const Projects = () => {
 
                                             return (
                                                 <BulletListItem key={`${detailKey}-${index}`}>
-                                                    <p className="text-sm/7">{text}</p>
+                                                    <p className="overflow-x-hidden text-sm/7 whitespace-nowrap" title={text}>
+                                                        {text}
+                                                    </p>
                                                 </BulletListItem>
                                             );
                                         })}
