@@ -9,7 +9,7 @@ if (!rootElement) throw new Error("Failed to find the root element");
 const root = ReactDOM.createRoot(rootElement);
 root.render(
     <React.StrictMode>
-        <div className="flex w-full px-8 md:px-32 lg:px-52">
+        <div className="flex w-full justify-center">
             <App />
         </div>
     </React.StrictMode>

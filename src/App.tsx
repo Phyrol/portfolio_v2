@@ -2,7 +2,7 @@ import Home from "pages/Home/Home";
 
 const App = () => {
     return (
-        <div>
+        <div className="w-3/4 max-w-5xl">
             <Home />
 
             {/* TODO: Finalize footer component */}
