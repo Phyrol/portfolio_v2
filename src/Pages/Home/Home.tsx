@@ -1,7 +1,7 @@
-import AboutMe from "pages/Home/AboutMe/AboutMe";
-import Projects from "pages/Home/Projects/Projects";
-import Work from "pages/Home/Work/Work";
-import Header from "./Header/Header";
+import AboutMe from "pages/Home/components/AboutMe";
+import Projects from "pages/Home/components/Projects";
+import Work from "pages/Home/components/Work";
+import Header from "pages/Home/components/Header";
 
 const Home = () => {
     return (
