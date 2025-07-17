@@ -3,18 +3,20 @@ import SkillsList from "common/components/SkillsList";
 import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
 
 interface WorkInfo {
+    currentRole: string;
     company: string;
-    position: string;
     link: string;
     dateRange: string;
     responsibilities: string[];
     skills: string[];
+    previousRoles?: string[];
 }
 
 const WORK_HISTORY: WorkInfo[] = [
     {
+        currentRole: "Frontend Engineer II",
+        previousRoles: ["Frontend Engineer I"],
         company: "AWS, SageMaker JumpStart & Fault Injection Service Console",
-        position: "Frontend Engineer II",
         link: "https://aws.amazon.com/",
         dateRange: "2022 - Present",
         responsibilities: [
@@ -39,8 +41,8 @@ const WORK_HISTORY: WorkInfo[] = [
         ],
     },
     {
+        currentRole: "Software Engineer Intern",
         company: "Garmin, AeroData",
-        position: "Software Engineer Intern",
         link: "https://www.aerodata.co/en-US/",
         dateRange: "2021",
         responsibilities: [
@@ -52,8 +54,8 @@ const WORK_HISTORY: WorkInfo[] = [
         skills: [Language.JAVASCRIPT, Language.C_SHARP, Language.HTML, Framework.ASP_NET],
     },
     {
+        currentRole: "Systems Engineer",
         company: "Heatwave Studio",
-        position: "Systems Engineer",
         link: "https://heatwave-studios.itch.io/",
         dateRange: "2019 - 2022",
         responsibilities: [
@@ -65,8 +67,8 @@ const WORK_HISTORY: WorkInfo[] = [
         skills: [Language.C_SHARP, Tool.UNITY],
     },
     {
+        currentRole: "IT Intern",
         company: "Mesa Public Schools",
-        position: "IT Intern",
         link: "https://www.mpsaz.org/",
         dateRange: "2016 - 2018",
         responsibilities: [
@@ -84,20 +86,26 @@ const Work = () => {
         <section className="space-y-2">
             <h2>Work</h2>
 
-            {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => (
+            {WORK_HISTORY.map(({currentRole, previousRoles, company, link, dateRange, responsibilities, skills}) => (
                 <div
                     key={company}
                     className="hover:bg-space-cadet/60 hover:inset-shadow-light-space-cadet mb-1 space-y-1 rounded-md p-4 hover:inset-shadow-sm"
                 >
-                    <h4 className="inline space-x-2">
-                        <span className="font-medium">{position}</span>
-                        <span>&mdash;</span>
-                        <a href={link} target={"_blank"} rel="noreferrer" className="hover:text-red-pantone relative inline-block">
-                            {company}
-                        </a>
-                    </h4>
+                    <div className="flex space-x-3">
+                        <h4 className="w-fit space-x-2">
+                            <span className="font-medium">{currentRole}</span>
+                            <span>&mdash;</span>
+                            <a href={link} target={"_blank"} rel="noreferrer" className="hover:text-red-pantone relative">
+                                {company}
+                            </a>
+                        </h4>
 
-                    <p className="text-base">{dateRange}</p>
+                        <p className="self-center text-sm md:whitespace-nowrap">{dateRange}</p>
+                    </div>
+
+                    {previousRoles?.map(role => (
+                        <p className="text-cadet-gray/70">{role}</p>
+                    ))}
 
                     <ul>
                         {responsibilities.map((responsibility, index) => (
