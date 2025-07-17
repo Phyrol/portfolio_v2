@@ -163,7 +163,7 @@ const PROJECT_INFO: ProjectInfo[] = [
 const Projects = () => {
     return (
         <section className="space-y-6">
-            <h2>Projects</h2>
+            <h2 className="section_header">Projects</h2>
 
             <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(300px,_100%),_1fr))] gap-4">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
@@ -187,7 +187,7 @@ const Projects = () => {
                                     />
                                 </div>
                                 <div className="flex flex-1 flex-col px-4 pb-4">
-                                    <h5 className="mb-1">{title}</h5>
+                                    <h5 className="text-anti-flash-white mb-1">{title}</h5>
 
                                     <ul className="grid grid-cols-2">
                                         {Object.entries(details).map(([detailKey, detail], index) => {

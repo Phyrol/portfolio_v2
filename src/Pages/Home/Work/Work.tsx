@@ -84,7 +84,7 @@ const WORK_HISTORY: WorkInfo[] = [
 const Work = () => {
     return (
         <section className="space-y-2">
-            <h2>Work</h2>
+            <h2 className="section_header">Work</h2>
 
             {WORK_HISTORY.map(({currentRole, previousRoles, company, link, dateRange, responsibilities, skills}) => (
                 <div
@@ -92,7 +92,7 @@ const Work = () => {
                     className="hover:bg-space-cadet/60 hover:inset-shadow-light-space-cadet mb-1 space-y-1 rounded-md p-4 hover:inset-shadow-sm"
                 >
                     <div className="flex space-x-3">
-                        <h4 className="w-fit space-x-2">
+                        <h4 className="text-anti-flash-white w-fit space-x-2">
                             <span className="font-medium">{currentRole}</span>
                             <span>&mdash;</span>
                             <a href={link} target={"_blank"} rel="noreferrer" className="hover:text-red-pantone relative">
