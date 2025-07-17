@@ -13,8 +13,8 @@ interface WorkInfo {
 
 const WORK_HISTORY: WorkInfo[] = [
     {
-        company: "Amazon Web Services (AWS), SageMaker JumpStart & Fault Injection Service Console",
-        position: "Frontend Engineer II (promoted from L4)",
+        company: "AWS, SageMaker JumpStart & Fault Injection Service Console",
+        position: "Frontend Engineer II",
         link: "https://aws.amazon.com/",
         dateRange: "2022 - Present",
         responsibilities: [
@@ -85,11 +85,14 @@ const Work = () => {
             <h2>Work</h2>
 
             {WORK_HISTORY.map(({company, position, link, dateRange, responsibilities, skills}) => (
-                <div key={company} className="mb-1 space-y-1 rounded-4xl p-4 hover:bg-red-500/20">
-                    <h4 className="inline">
-                        {position}
-                        <a href={link} target={"_blank"} rel="noreferrer" className="relative inline-block">
-                            &nbsp;&mdash;&nbsp;
+                <div
+                    key={company}
+                    className="hover:bg-space-cadet/60 hover:inset-shadow-light-space-cadet mb-1 space-y-1 rounded-md p-4 hover:inset-shadow-sm"
+                >
+                    <h4 className="inline space-x-2">
+                        <span className="font-medium">{position}</span>
+                        <span>&mdash;</span>
+                        <a href={link} target={"_blank"} rel="noreferrer" className="hover:text-red-pantone relative inline-block">
                             {company}
                         </a>
                     </h4>
