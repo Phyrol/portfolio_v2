@@ -168,7 +168,7 @@ const Projects = () => {
 
             <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(300px,_100%),_1fr))] gap-4">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
-                    <TiltElement enableGlare>
+                    <TiltElement key={title} enableGlare>
                         <a
                             href={downloadLink}
                             target={"_blank"}
@@ -176,10 +176,7 @@ const Projects = () => {
                             aria-label={`View more about ${title}`}
                             className="block h-full"
                         >
-                            <div
-                                key={title}
-                                className="bg-lightest-space-cadet/50 inset-ring-red-pantone/50 flex h-full flex-col rounded-xl inset-ring-1"
-                            >
+                            <div className="bg-lightest-space-cadet/50 inset-ring-red-pantone/50 flex h-full flex-col rounded-xl inset-ring-1">
                                 <div className="ring-red-pantone/50 aspect-[6/3] overflow-hidden p-3.5 md:aspect-[16/9]">
                                     <img
                                         src={thumbnailImage}

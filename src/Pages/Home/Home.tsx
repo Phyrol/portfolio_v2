@@ -28,7 +28,9 @@ const Home = () => {
                 <Header />
 
                 {Object.entries(SECTION_TO_ELEMENT_MAP).map(([section, el]) => (
-                    <div id={section}>{el}</div>
+                    <div key={section} id={section}>
+                        {el}
+                    </div>
                 ))}
             </div>
         </main>

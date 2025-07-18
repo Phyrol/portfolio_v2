@@ -96,7 +96,7 @@ const Work = () => {
                     <WorkInfoHeader {...headerInfo} />
 
                     {previousRoles?.map(role => (
-                        <p className="text-cadet-gray/70" aria-hidden>
+                        <p key={`${headerInfo.company}-${role}`} className="text-cadet-gray/70" aria-hidden>
                             {role}
                         </p>
                     ))}
