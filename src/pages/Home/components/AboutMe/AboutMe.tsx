@@ -6,7 +6,7 @@ const ABOUT_ME_DESCRIPTION =
 
 const AboutMe = () => {
     return (
-        <section>
+        <section className="space-y-2">
             <h2 className="section_header">About me</h2>
             <p>{ABOUT_ME_DESCRIPTION}</p>
         </section>

@@ -3,8 +3,8 @@ const Header = () => {
         <section className="space-y-2">
             <div className="space-y-3">
                 <p className="text-sm">Hi, my name is</p>
-                <h1 className="text-anti-flash-white">Bradley Potzka</h1>
-                <h2 className="text-cadet-gray">Software Developer, Game Developer</h2>
+                <h1 className="text-anti-flash-white text-4xl font-bold sm:text-5xl">Bradley Potzka</h1>
+                <h2 className="text-cadet-gray font text-lg">Software Developer, Game Developer</h2>
             </div>
 
             <div className="[&>*]:after:text-cadet-gray [&>a]:text-red-rojo [&>*]:hover:text-red-pantone space-x-2 [&>*]:after:ml-2 [&>*]:after:content-['|']">

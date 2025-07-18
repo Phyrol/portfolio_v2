@@ -5,7 +5,7 @@ import Header from "pages/Home/components/Header";
 
 const Home = () => {
     return (
-        <main className="flex flex-col space-y-24">
+        <main className="flex flex-col space-y-18">
             <Header />
 
             <AboutMe />
