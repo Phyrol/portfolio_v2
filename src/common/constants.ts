@@ -1,5 +1,8 @@
 export const GITHUB_PROFILE_LINK = "https://github.com/Phyrol";
 export const ITCHIO_PROFILE_LINK = "https://phyrol.itch.io";
+export const LINKED_IN_LINK = "https://www.linkedin.com/in/bradleypotzka/";
+export const EMAIL = "bradleypotzka39@gmail.com";
+export const PHONE_NUMBER = "(480) 440-5081";
 
 export enum Tool {
     CYPRESS = "Cypress",

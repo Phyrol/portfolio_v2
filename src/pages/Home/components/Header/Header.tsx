@@ -1,3 +1,5 @@
+import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, PHONE_NUMBER} from "common/constants";
+
 const Header = () => {
     return (
         <section className="space-y-2">
@@ -7,13 +9,13 @@ const Header = () => {
                 <h2 className="text-cadet-gray font text-lg">Software Developer, Game Developer</h2>
             </div>
 
-            <div className="[&>*]:after:text-cadet-gray [&>a]:text-red-rojo [&>*]:hover:text-red-pantone space-x-2 [&>*]:after:ml-2 [&>*]:after:content-['|']">
-                <a href="mailto:bradleypotzka39@gmail.com">bradleypotzka39@gmail</a>
-                <span>(480) 440-5081</span>
-                <a href="https://github.com/Phyrol" target={"_blank"} rel="noreferrer">
+            <div className="[&>*]:after:text-cadet-gray [&>a]:text-red-rojo [&>*]:hover:text-red-pantone flex flex-wrap space-x-2 text-base [&>*]:after:ml-2 [&>*]:not-last:after:content-['|']">
+                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                <span className="inline-block text-nowrap">{PHONE_NUMBER}</span>
+                <a href={GITHUB_PROFILE_LINK} target={"_blank"} rel="noreferrer">
                     GitHub
                 </a>
-                <a href="https://phyrol.itch.io/" target={"_blank"} rel="noreferrer">
+                <a href={ITCHIO_PROFILE_LINK} target={"_blank"} rel="noreferrer">
                     itch.io
                 </a>
                 <a href="https://www.linkedin.com/in/bradleypotzka/" target={"_blank"} rel="noreferrer">
