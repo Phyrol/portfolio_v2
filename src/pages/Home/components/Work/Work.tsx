@@ -1,9 +1,9 @@
 import BulletListItem from "common/components/BulletListItem";
 import SkillsList from "common/components/SkillsList";
 import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
-import UP_RIGHT_ARROW_ICON from "assets/icons/up_right_arrow.svg";
+import WorkInfoHeader from "./WorkInfo/WorkInfoHeader";
 
-interface WorkInfo {
+export interface WorkInfo {
     currentRole: string;
     company: string;
     link: string;
@@ -87,28 +87,12 @@ const Work = () => {
         <section className="space-y-2">
             <h2 className="section_header">Work</h2>
 
-            {WORK_HISTORY.map(({currentRole, previousRoles, company, link, dateRange, responsibilities, skills}) => (
+            {WORK_HISTORY.map(({previousRoles, responsibilities, skills, ...headerInfo}, index) => (
                 <div
-                    key={company}
+                    key={`work-info-${index}`}
                     className="hover:bg-space-cadet/60 hover:inset-shadow-light-space-cadet mb-1 space-y-1 rounded-md p-4 hover:inset-shadow-sm"
                 >
-                    <div className="flex space-x-3">
-                        <h4 className="text-anti-flash-white w-fit space-x-2">
-                            <span className="font-medium">{currentRole}</span>
-                            <span>&mdash;</span>
-                            <a
-                                href={link}
-                                target={"_blank"}
-                                rel="noreferrer"
-                                className="hover:text-red-pantone hover:[&>*]:stroke-red-pantone relative flex hover:[&>*]:self-start"
-                            >
-                                {company}
-                                <UP_RIGHT_ARROW_ICON className="stroke-anti-flash-white ml-1 h-4 w-4 self-center" />
-                            </a>
-                        </h4>
-
-                        <p className="self-center text-sm md:whitespace-nowrap">{dateRange}</p>
-                    </div>
+                    <WorkInfoHeader {...headerInfo} />
 
                     {previousRoles?.map(role => (
                         <p className="text-cadet-gray/70">{role}</p>
