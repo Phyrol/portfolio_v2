@@ -1,11 +1,10 @@
-import {JSX, useCallback, useRef} from "react";
+import {PropsWithChildren, useCallback, useRef} from "react";
 
 export interface TiltElementProps {
-    children: JSX.Element;
     enableGlare?: boolean;
 }
 
-const TiltElement = ({children, enableGlare}: TiltElementProps) => {
+const TiltElement = ({children, enableGlare}: PropsWithChildren<TiltElementProps>) => {
     const elementRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
