@@ -96,7 +96,9 @@ const Work = () => {
                     <WorkInfoHeader {...headerInfo} />
 
                     {previousRoles?.map(role => (
-                        <p className="text-cadet-gray/70">{role}</p>
+                        <p className="text-cadet-gray/70" aria-hidden>
+                            {role}
+                        </p>
                     ))}
 
                     <ul>
