@@ -1,6 +1,7 @@
 import BulletListItem from "common/components/BulletListItem";
 import SkillsList from "common/components/SkillsList";
 import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
+import UP_RIGHT_ARROW_ICON from "assets/icons/up_right_arrow.svg";
 
 interface WorkInfo {
     currentRole: string;
@@ -95,8 +96,14 @@ const Work = () => {
                         <h4 className="text-anti-flash-white w-fit space-x-2">
                             <span className="font-medium">{currentRole}</span>
                             <span>&mdash;</span>
-                            <a href={link} target={"_blank"} rel="noreferrer" className="hover:text-red-pantone relative">
+                            <a
+                                href={link}
+                                target={"_blank"}
+                                rel="noreferrer"
+                                className="hover:text-red-pantone hover:[&>*]:stroke-red-pantone relative flex hover:[&>*]:self-start"
+                            >
                                 {company}
+                                <UP_RIGHT_ARROW_ICON className="stroke-anti-flash-white ml-1 h-4 w-4 self-center" />
                             </a>
                         </h4>
 

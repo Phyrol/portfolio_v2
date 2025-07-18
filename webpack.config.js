@@ -40,8 +40,12 @@ module.exports = (env, argv) => {
                     use: ["style-loader", "css-loader", "postcss-loader"],
                 },
                 {
-                    test: /\.(png|jpe?g|gif|svg)$/i,
-                    type: "asset/resource", // emits the file
+                    test: /\.svg$/i,
+                    use: ["@svgr/webpack"],
+                },
+                {
+                    test: /\.(png|jpe?g|gif)$/i,
+                    type: "asset/resource",
                     generator: {
                         filename: "assets/[name].[contenthash][ext][query]",
                     },

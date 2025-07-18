@@ -13,7 +13,9 @@ declare module "*.jpeg" {
     export default value;
 }
 
+// This is needed for React to recognize .svg files during import - https://webpack.js.org/guides/typescript/#importing-other-assets
 declare module "*.svg" {
-    const value: string;
-    export default value;
+    const content: React.ComponentClass<React.DetailedHTMLProps<React.SVGAttributes<SVGElement>, SVGElement>>;
+
+    export default content;
 }
