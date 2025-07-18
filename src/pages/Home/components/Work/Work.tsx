@@ -2,6 +2,7 @@ import BulletListItem from "common/components/BulletListItem";
 import SkillsList from "common/components/SkillsList";
 import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
 import WorkInfoHeader from "./WorkInfo/WorkInfoHeader";
+import {HomePageSection} from "pages/Home/Home";
 
 export interface WorkInfo {
     currentRole: string;
@@ -85,7 +86,7 @@ const WORK_HISTORY: WorkInfo[] = [
 const Work = () => {
     return (
         <section className="space-y-2">
-            <h2 className="section_header">Work</h2>
+            <h2 className="section_header">{HomePageSection.WORK}</h2>
 
             {WORK_HISTORY.map(({previousRoles, responsibilities, skills, ...headerInfo}, index) => (
                 <div

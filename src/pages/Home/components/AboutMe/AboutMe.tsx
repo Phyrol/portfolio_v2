@@ -1,3 +1,5 @@
+import {HomePageSection} from "pages/Home/Home";
+
 const ABOUT_ME_DESCRIPTION =
     "Results-driven Frontend Engineer with experience building scalable and intuitive web applications at Amazon. \
                 Demonstrated ability to lead complex projects end-to-end, mentor cross-functional teams, and improve system reliability and customer experience. \
@@ -7,7 +9,7 @@ const ABOUT_ME_DESCRIPTION =
 const AboutMe = () => {
     return (
         <section className="space-y-2">
-            <h2 className="section_header">About me</h2>
+            <h2 className="section_header">{HomePageSection.ABOUT}</h2>
             <p>{ABOUT_ME_DESCRIPTION}</p>
         </section>
     );
