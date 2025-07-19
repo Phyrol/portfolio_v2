@@ -1,4 +1,4 @@
-import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, PHONE_NUMBER} from "common/constants";
+import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, LINKED_IN_LINK, PHONE_NUMBER} from "common/constants";
 
 const Header = () => {
     return (
@@ -18,7 +18,7 @@ const Header = () => {
                 <a href={ITCHIO_PROFILE_LINK} target={"_blank"} rel="noreferrer">
                     itch.io
                 </a>
-                <a href="https://www.linkedin.com/in/bradleypotzka/" target={"_blank"} rel="noreferrer">
+                <a href={LINKED_IN_LINK} target={"_blank"} rel="noreferrer">
                     LinkedIn
                 </a>
             </div>

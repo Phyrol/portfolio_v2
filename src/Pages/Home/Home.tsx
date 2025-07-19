@@ -4,6 +4,7 @@ import Projects from "pages/Home/components/Projects";
 import Experience from "pages/Home/components/Experience";
 import Header from "pages/Home/components/Header";
 import NavBar from "common/components/NavBar";
+import SocialLinkNav from "common/components/SocialLinkNav";
 
 export enum HomePageSection {
     ABOUT = "About",
@@ -20,8 +21,10 @@ const SECTION_TO_ELEMENT_MAP: {[section in HomePageSection]: ReactNode} = {
 const Home = () => {
     return (
         <main className="grid grid-cols-[1fr_3fr] [&>*]:py-8 [&>*]:sm:py-16 [&>*]:md:py-24">
-            <div className="sticky top-0 h-screen">
+            <div className="sticky top-0 flex h-screen flex-col justify-between">
                 <NavBar className="space-y-6" ids={Object.values(HomePageSection)} />
+
+                <SocialLinkNav />
             </div>
 
             <div className="flex flex-col space-y-18">
