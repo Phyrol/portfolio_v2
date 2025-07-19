@@ -4,6 +4,7 @@ import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
 import WorkInfoHeader from "./WorkInfo/WorkInfoHeader";
 import {HomePageSection} from "pages/Home/Home";
 import {useMediaQuery} from "common/utils";
+import {useState} from "react";
 
 const EXPERIENCE_GROUP_NAME = "experience-info";
 
@@ -87,6 +88,7 @@ const WORK_HISTORY: WorkInfo[] = [
 ];
 
 const Experience = () => {
+    const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const isWide = useMediaQuery("(min-width: 640px)"); // Tailwind's `sm`
 
     const Wrapper = isWide ? "a" : "div";
@@ -95,31 +97,37 @@ const Experience = () => {
         <section className="space-y-2">
             <h2 className="section_header">{HomePageSection.EXPERIENCE}</h2>
 
-            {WORK_HISTORY.map(({previousRoles, responsibilities, skills, ...headerInfo}, index) => (
-                <Wrapper
-                    key={`work-info-${index}`}
-                    {...(isWide ? {href: headerInfo.link, target: "_blank", rel: "noreferrer"} : {})}
-                    className={`block ${isWide ? `hover:bg-space-cadet/60 hover:cursor-pointer group/${EXPERIENCE_GROUP_NAME} hover:inset-shadow-lightest-space-cadet hover:inset-shadow-sm` : ""} mb-1 space-y-1 rounded-md p-4`}
-                >
-                    <WorkInfoHeader {...headerInfo} />
+            {WORK_HISTORY.map(({previousRoles, responsibilities, skills, ...headerInfo}, index) => {
+                const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
 
-                    {previousRoles?.map(role => (
-                        <p key={`${headerInfo.company}-${role}`} className="text-cadet-gray/70" aria-hidden>
-                            {role}
-                        </p>
-                    ))}
+                return (
+                    <Wrapper
+                        key={`work-info-${index}`}
+                        onMouseEnter={() => setHoveredIndex(index)}
+                        onMouseLeave={() => setHoveredIndex(null)}
+                        {...(isWide ? {href: headerInfo.link, target: "_blank", rel: "noreferrer"} : {})}
+                        className={`block ${isWide ? `hover:bg-space-cadet/60 hover:cursor-pointer group/${EXPERIENCE_GROUP_NAME} hover:inset-shadow-lightest-space-cadet hover:inset-shadow-sm` : ""} ${isOtherHovered ? "opacity-50 duration-200" : ""} mb-1 space-y-1 rounded-md p-4`}
+                    >
+                        <WorkInfoHeader {...headerInfo} />
 
-                    <ul>
-                        {responsibilities.map((responsibility, index) => (
-                            <BulletListItem key={`detail-${index}`}>
-                                <p className="text-base">{responsibility}</p>
-                            </BulletListItem>
+                        {previousRoles?.map(role => (
+                            <p key={`${headerInfo.company}-${role}`} className="text-cadet-gray/70" aria-hidden>
+                                {role}
+                            </p>
                         ))}
-                    </ul>
 
-                    <SkillsList skills={skills} />
-                </Wrapper>
-            ))}
+                        <ul>
+                            {responsibilities.map((responsibility, index) => (
+                                <BulletListItem key={`detail-${index}`}>
+                                    <p className="text-base">{responsibility}</p>
+                                </BulletListItem>
+                            ))}
+                        </ul>
+
+                        <SkillsList skills={skills} />
+                    </Wrapper>
+                );
+            })}
         </section>
     );
 };
