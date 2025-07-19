@@ -2,7 +2,6 @@ import BulletListItem from "common/components/BulletListItem";
 import SkillsList from "common/components/SkillsList";
 import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
 import WorkInfoHeader from "./WorkInfo/WorkInfoHeader";
-import {HomePageSection} from "pages/Home/Home";
 import {useMediaQuery} from "common/utils";
 import {useState} from "react";
 
@@ -95,8 +94,6 @@ const Experience = () => {
 
     return (
         <section className="space-y-2">
-            <h2 className="section_header">{HomePageSection.EXPERIENCE}</h2>
-
             {WORK_HISTORY.map(({previousRoles, responsibilities, skills, ...headerInfo}, index) => {
                 const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
 

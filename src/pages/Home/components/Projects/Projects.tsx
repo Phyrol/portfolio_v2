@@ -11,7 +11,6 @@ import SkillsList from "common/components/SkillsList";
 import TiltElement from "../../../../common/components/TiltElement";
 import {ITCHIO_PROFILE_LINK, Language, Tool} from "common/constants";
 import BulletListItem from "common/components/BulletListItem";
-import {HomePageSection} from "pages/Home/Home";
 
 enum DetailKey {
     SHIPPED_DATE = "shippedDate",
@@ -163,9 +162,7 @@ const PROJECT_INFO: ProjectInfo[] = [
 
 const Projects = () => {
     return (
-        <section className="space-y-6">
-            <h2 className="section_header">{HomePageSection.PROJECTS}</h2>
-
+        <section>
             <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(300px,_100%),_1fr))] gap-4">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
                     <TiltElement key={title} enableGlare>
