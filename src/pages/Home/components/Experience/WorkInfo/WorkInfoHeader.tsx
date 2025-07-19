@@ -1,6 +1,6 @@
 import {useState} from "react";
 import {WorkInfo} from "../Experience";
-import UP_RIGHT_ARROW_ICON from "assets/icons/up_right_arrow.svg";
+import UP_RIGHT_ARROW_ICON from "assets/icons/up_right_arrow_icon.svg";
 
 interface WorkHeaderProps extends Pick<WorkInfo, "currentRole" | "company" | "link" | "dateRange"> {}
 
@@ -20,7 +20,7 @@ const WorkInfoHeader = ({currentRole, company, link, dateRange}: WorkHeaderProps
 
     return (
         <div className="flex flex-wrap gap-x-3 gap-y-2">
-            <h3 className="text-anti-flash-white flex max-w-fit leading-snug">
+            <h3 className="text-anti-flash-white group-hover/experience-info:text-red-pantone flex leading-snug">
                 <a href={link} target={"_blank"} rel="noreferrer" className="hover:text-red-rojo flex flex-wrap space-x-2">
                     <span className="font-medium">{currentRole}</span>
                     <span>&mdash;</span>
@@ -29,7 +29,7 @@ const WorkInfoHeader = ({currentRole, company, link, dateRange}: WorkHeaderProps
                         {!!companyWords.remainingWords && `${companyWords.remainingWords} `}
                         <span className="inline-flex">
                             {companyWords.lastWord}
-                            <UP_RIGHT_ARROW_ICON className="stroke-anti-flash-white ml-1 h-4 w-4 self-center" />
+                            <UP_RIGHT_ARROW_ICON className="ml-1 h-4 w-4 self-center group-hover/experience-info:self-start" />
                         </span>
                     </span>
                 </a>
