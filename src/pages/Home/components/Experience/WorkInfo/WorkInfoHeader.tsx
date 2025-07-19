@@ -20,7 +20,7 @@ const WorkInfoHeader = ({currentRole, company, link, dateRange}: WorkHeaderProps
 
     return (
         <div className="flex flex-wrap gap-x-3 gap-y-2">
-            <h3 className="text-anti-flash-white group-hover/experience-info:text-red-pantone flex leading-snug">
+            <h3 className="text-anti-flash-white group-hover/experience-info:text-red-rojo flex leading-snug">
                 <a href={link} target={"_blank"} rel="noreferrer" className="hover:text-red-rojo flex flex-wrap space-x-2">
                     <span className="font-medium">{currentRole}</span>
                     <span>&mdash;</span>

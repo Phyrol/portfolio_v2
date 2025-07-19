@@ -99,7 +99,7 @@ const Experience = () => {
                 <Wrapper
                     key={`work-info-${index}`}
                     {...(isWide ? {href: headerInfo.link, target: "_blank", rel: "noreferrer"} : {})}
-                    className={`block ${isWide ? "hover:bg-space-cadet/60 hover:cursor-pointer" : ""} sm:group/${EXPERIENCE_GROUP_NAME} mb-1 space-y-1 rounded-md p-4`}
+                    className={`block ${isWide ? `hover:bg-space-cadet/60 hover:cursor-pointer group/${EXPERIENCE_GROUP_NAME}` : ""} mb-1 space-y-1 rounded-md p-4`}
                 >
                     <WorkInfoHeader {...headerInfo} />
 
