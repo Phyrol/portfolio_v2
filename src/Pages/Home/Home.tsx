@@ -21,7 +21,7 @@ const Home = () => {
     return (
         <main className="grid grid-cols-[1fr_3fr] [&>*]:py-8 [&>*]:sm:py-16 [&>*]:md:py-24">
             <div className="sticky top-0 h-screen">
-                <NavBar ids={Object.values(HomePageSection)} />
+                <NavBar className="space-y-6" ids={Object.values(HomePageSection)} />
             </div>
 
             <div className="flex flex-col space-y-18">

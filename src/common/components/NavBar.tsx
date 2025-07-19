@@ -1,13 +1,17 @@
 interface NavBarProps {
     ids: string[];
+    className?: string;
 }
 
-const NavBar = ({ids}: NavBarProps) => {
+const NavBar = ({ids, className = ""}: NavBarProps) => {
     return (
-        <ol>
+        <ol className={className}>
             {ids.map(id => (
-                <li key={id} className="hover:text-red-pantone">
-                    <a href={`#${id}`}>{id}</a>
+                <li>
+                    <a href={`#${id}`} className="group relative">
+                        <span className="group-hover:text-anti-flash-white duration-200">{id}</span>
+                        <span className="bg-red-rojo absolute -bottom-1 left-0 h-0.5 w-0 transition-all duration-200 group-hover:w-full" />
+                    </a>
                 </li>
             ))}
         </ol>
