@@ -1,19 +1,19 @@
 import {ReactNode} from "react";
 import AboutMe from "pages/Home/components/AboutMe";
 import Projects from "pages/Home/components/Projects";
-import Work from "pages/Home/components/Work";
+import Experience from "pages/Home/components/Experience";
 import Header from "pages/Home/components/Header";
 import NavBar from "common/components/NavBar";
 
 export enum HomePageSection {
     ABOUT = "About",
-    WORK = "Work",
+    EXPERIENCE = "Experience",
     PROJECTS = "Projects",
 }
 
 const SECTION_TO_ELEMENT_MAP: {[section in HomePageSection]: ReactNode} = {
     [HomePageSection.ABOUT]: <AboutMe />,
-    [HomePageSection.WORK]: <Work />,
+    [HomePageSection.EXPERIENCE]: <Experience />,
     [HomePageSection.PROJECTS]: <Projects />,
 };
 

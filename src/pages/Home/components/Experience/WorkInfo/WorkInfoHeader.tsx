@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {WorkInfo} from "../Work";
+import {WorkInfo} from "../Experience";
 import UP_RIGHT_ARROW_ICON from "assets/icons/up_right_arrow.svg";
 
 interface WorkHeaderProps extends Pick<WorkInfo, "currentRole" | "company" | "link" | "dateRange"> {}

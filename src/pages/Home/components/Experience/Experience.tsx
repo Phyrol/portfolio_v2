@@ -83,10 +83,10 @@ const WORK_HISTORY: WorkInfo[] = [
     },
 ];
 
-const Work = () => {
+const Experience = () => {
     return (
         <section className="space-y-2">
-            <h2 className="section_header">{HomePageSection.WORK}</h2>
+            <h2 className="section_header">{HomePageSection.EXPERIENCE}</h2>
 
             {WORK_HISTORY.map(({previousRoles, responsibilities, skills, ...headerInfo}, index) => (
                 <div
@@ -116,4 +116,4 @@ const Work = () => {
     );
 };
 
-export default Work;
+export default Experience;
