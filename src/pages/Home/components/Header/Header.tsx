@@ -4,7 +4,6 @@ const Header = () => {
     return (
         <section className="space-y-2">
             <div className="space-y-3">
-                <p className="text-sm">Hi, my name is</p>
                 <h1 className="text-anti-flash-white text-4xl font-bold sm:text-5xl">Bradley Potzka</h1>
                 <h2 className="text-cadet-gray font text-lg">Software Developer, Game Developer</h2>
             </div>
