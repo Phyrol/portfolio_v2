@@ -8,7 +8,7 @@ const App = () => {
 
             <footer className="mb-6 sm:mb-8 md:mb-10">
                 <div className="flex min-w-full justify-center">
-                    <a href={`${GITHUB_PROFILE_LINK}/portfolio`} target={"_blank"} rel="noreferrer" className="hover:text-red-rojo">
+                    <a href={`${GITHUB_PROFILE_LINK}/portfolio_v2`} target={"_blank"} rel="noreferrer" className="hover:text-red-rojo">
                         <p className="text-base">Built by Bradley Potzka</p>
                     </a>
                 </div>
