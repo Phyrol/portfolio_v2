@@ -127,7 +127,7 @@ const Experience = () => {
                         {...(isWide ? {href: headerInfo.link, target: "_blank", rel: "noreferrer"} : {})}
                         className={`block ${isWide ? `hover:bg-space-cadet/60 hover:cursor-pointer group/${EXPERIENCE_GROUP_NAME} hover:inset-shadow-lightest-space-cadet hover:inset-shadow-sm` : ""} ${isOtherHovered ? "opacity-50 duration-200" : ""} mb-1 space-y-1 rounded-md p-4`}
                     >
-                        <WorkInfoHeader {...headerInfo} />
+                        <WorkInfoHeader {...headerInfo} shouldUseLink={!isWide} />
 
                         {previousRoles?.map(role => (
                             <p key={`${headerInfo.company}-${role}`} className="text-cadet-gray/70" aria-hidden>

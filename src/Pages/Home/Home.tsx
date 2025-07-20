@@ -23,7 +23,7 @@ const Home = () => {
     const isWide = useMediaQuery(SMALL_SCREEN_MEDIA_QUERY);
 
     return (
-        <main className={`${isWide ? "grid grid-cols-[1fr_3fr]" : ""} [&>*]:py-8 [&>*]:sm:py-13 [&>*]:md:py-18`}>
+        <main className={`${isWide ? "grid grid-cols-[1fr_3fr] gap-4" : ""} [&>*]:py-8 [&>*]:sm:py-13 [&>*]:md:py-18`}>
             {isWide && (
                 <div className="sticky top-0 flex h-screen flex-col justify-between">
                     <NavBar className="space-y-6" ids={Object.values(HomePageSection)} />

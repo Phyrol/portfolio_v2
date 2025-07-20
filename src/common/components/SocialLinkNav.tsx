@@ -33,7 +33,7 @@ const SocialLinkNav = () => {
         <div className="flex">
             <ul className="[&>*]:after:text-cadet-gray space-y-3">
                 {LINKS_AND_ICONS.map(({link, icon}) => (
-                    <li>
+                    <li key={link}>
                         <a
                             href={link}
                             target="_blank"
