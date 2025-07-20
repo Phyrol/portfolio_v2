@@ -24,7 +24,7 @@ const WorkInfoHeader = ({currentRole, company, link, dateRange, shouldUseLink}: 
         () => (
             <h3 className="group-hover/experience-info:text-red-rojo flex flex-wrap space-x-2 leading-snug">
                 <span className="font-medium">{currentRole}</span>
-                <span>&bull;</span>
+                <span className="self-center text-sm">&bull;</span>
 
                 <span className="relative inline">
                     {!!companyWords.remainingWords && `${companyWords.remainingWords} `}
