@@ -1,3 +1,4 @@
+import {GITHUB_PROFILE_LINK} from "common/constants";
 import Home from "pages/Home/Home";
 
 const App = () => {
@@ -5,11 +6,10 @@ const App = () => {
         <div className="w-11/13 max-w-7xl">
             <Home />
 
-            {/* TODO: Finalize footer component */}
-            <footer>
+            <footer className="mb-6 sm:mb-8 md:mb-10">
                 <div className="flex min-w-full justify-center">
-                    <a href="https://github.com/Phyrol/portfolio" target={"_blank"} rel="noreferrer">
-                        Built by Bradley Potzka
+                    <a href={`${GITHUB_PROFILE_LINK}/portfolio`} target={"_blank"} rel="noreferrer" className="hover:text-red-rojo">
+                        <p className="text-base">Built by Bradley Potzka</p>
                     </a>
                 </div>
             </footer>
