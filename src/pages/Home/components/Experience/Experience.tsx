@@ -4,7 +4,7 @@ import {Framework, Language, Library, RuntimeEnv, SMALL_SCREEN_MEDIA_QUERY, Tool
 import WorkInfoHeader from "./WorkInfo/WorkInfoHeader";
 import {useMediaQuery} from "common/utils";
 import {useCallback, useState} from "react";
-import {HomePageSection} from "pages/Home/Home";
+import {HomePageSection} from "pages/Home";
 
 const EXPERIENCE_GROUP_NAME = "experience-info";
 

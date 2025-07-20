@@ -12,7 +12,7 @@ import TiltElement from "../../../../common/components/TiltElement";
 import {ITCHIO_PROFILE_LINK, Language, SMALL_SCREEN_MEDIA_QUERY, Tool} from "common/constants";
 import BulletListItem from "common/components/BulletListItem";
 import {useMediaQuery} from "common/utils";
-import {HomePageSection} from "pages/Home/Home";
+import {HomePageSection} from "pages/Home";
 
 enum DetailKey {
     SHIPPED_DATE = "shippedDate",
