@@ -169,7 +169,7 @@ const Projects = () => {
         <section>
             {!isWide && <h2 className="section_header mb-8">{HomePageSection.PROJECTS}</h2>}
 
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(300px,_100%),_1fr))] gap-4">
+            <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(300px,_100%),_1fr))] gap-5">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
                     <TiltElement key={title} enableGlare>
                         <a
