@@ -50,6 +50,18 @@ module.exports = (env, argv) => {
                         filename: "assets/[name].[contenthash][ext][query]",
                     },
                 },
+                {
+                    test: /\.pdf$/,
+                    use: [
+                        {
+                            loader: "file-loader",
+                            options: {
+                                name: "[name].[hash].[ext]",
+                                outputPath: "assets/files",
+                            },
+                        },
+                    ],
+                },
             ],
         },
         plugins: [

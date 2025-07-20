@@ -26,7 +26,7 @@ const Home = () => {
         <main className={`${isWide ? "grid grid-cols-[1fr_3fr] gap-4" : ""} [&>*]:py-8 [&>*]:sm:py-13 [&>*]:md:py-18`}>
             {isWide && (
                 <div className="sticky top-0 flex h-screen flex-col justify-between">
-                    <NavBar className="space-y-4" ids={Object.values(HomePageSection)} />
+                    <NavBar ids={Object.values(HomePageSection)} />
 
                     <SocialLinkNav />
                 </div>
