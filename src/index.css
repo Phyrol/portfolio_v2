@@ -50,4 +50,5 @@ code {
 .section_header {
     @apply text-anti-flash-white;
     @apply text-2xl;
+    @apply font-light;
 }
