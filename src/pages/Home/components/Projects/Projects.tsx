@@ -179,12 +179,12 @@ const Projects = () => {
                             aria-label={`View more about ${title}`}
                             className="block h-full"
                         >
-                            <div className="bg-lightest-space-cadet/50 inset-ring-red-pantone/50 flex h-full flex-col rounded-xl inset-ring-1">
-                                <div className="ring-red-pantone/50 aspect-[6/3] overflow-hidden p-3.5 md:aspect-[16/9]">
+                            <div className="bg-lightest-space-cadet/50 inset-ring-red-pantone/50 flex h-full flex-col rounded-lg inset-ring-1">
+                                <div className="ring-red-pantone/80 aspect-[6/3] overflow-hidden p-3.5 md:aspect-[16/9]">
                                     <img
                                         src={thumbnailImage}
                                         alt={`${title} thumbnail`}
-                                        className="ring-red-pantone/30 h-full w-full rounded-xl object-cover ring-1"
+                                        className="ring-red-pantone/40 h-full w-full rounded-lg object-cover ring-1"
                                     />
                                 </div>
                                 <div className="flex flex-1 flex-col px-4 pb-4">
