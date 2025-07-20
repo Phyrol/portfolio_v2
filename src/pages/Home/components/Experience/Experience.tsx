@@ -1,9 +1,10 @@
 import BulletListItem from "common/components/BulletListItem";
 import SkillsList from "common/components/SkillsList";
-import {Framework, Language, Library, RuntimeEnv, Tool} from "common/constants";
+import {Framework, Language, Library, RuntimeEnv, SMALL_SCREEN_MEDIA_QUERY, Tool} from "common/constants";
 import WorkInfoHeader from "./WorkInfo/WorkInfoHeader";
 import {useMediaQuery} from "common/utils";
-import {useState} from "react";
+import {useCallback, useState} from "react";
+import {HomePageSection} from "pages/Home/Home";
 
 const EXPERIENCE_GROUP_NAME = "experience-info";
 
@@ -88,20 +89,41 @@ const WORK_HISTORY: WorkInfo[] = [
 
 const Experience = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-    const isWide = useMediaQuery("(min-width: 640px)"); // Tailwind's `sm`
+    const isWide = useMediaQuery(SMALL_SCREEN_MEDIA_QUERY);
 
     const Wrapper = isWide ? "a" : "div";
 
+    const handleMouseEnter = useCallback(
+        (index: number) => {
+            if (!isWide) {
+                return;
+            }
+
+            setHoveredIndex(index);
+        },
+        [isWide]
+    );
+
+    const handleMouseLeave = useCallback(() => {
+        if (!isWide) {
+            return;
+        }
+
+        setHoveredIndex(null);
+    }, [isWide]);
+
     return (
         <section className="space-y-2">
+            {!isWide && <h2 className="section_header">{HomePageSection.EXPERIENCE}</h2>}
+
             {WORK_HISTORY.map(({previousRoles, responsibilities, skills, ...headerInfo}, index) => {
                 const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
 
                 return (
                     <Wrapper
                         key={`work-info-${index}`}
-                        onMouseEnter={() => setHoveredIndex(index)}
-                        onMouseLeave={() => setHoveredIndex(null)}
+                        onMouseEnter={() => handleMouseEnter(index)}
+                        onMouseLeave={handleMouseLeave}
                         {...(isWide ? {href: headerInfo.link, target: "_blank", rel: "noreferrer"} : {})}
                         className={`block ${isWide ? `hover:bg-space-cadet/60 hover:cursor-pointer group/${EXPERIENCE_GROUP_NAME} hover:inset-shadow-lightest-space-cadet hover:inset-shadow-sm` : ""} ${isOtherHovered ? "opacity-50 duration-200" : ""} mb-1 space-y-1 rounded-md p-4`}
                     >

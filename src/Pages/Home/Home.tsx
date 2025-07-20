@@ -4,6 +4,8 @@ import Projects from "pages/Home/components/Projects";
 import Experience from "pages/Home/components/Experience";
 import NavBar from "common/components/NavBar";
 import SocialLinkNav from "common/components/SocialLinkNav";
+import {SMALL_SCREEN_MEDIA_QUERY} from "common/constants";
+import {useMediaQuery} from "common/utils";
 
 export enum HomePageSection {
     ABOUT = "About",
@@ -18,13 +20,17 @@ const SECTION_TO_ELEMENT_MAP: {[section in HomePageSection]: ReactNode} = {
 };
 
 const Home = () => {
-    return (
-        <main className="grid grid-cols-[1fr_3fr] [&>*]:py-8 [&>*]:sm:py-13 [&>*]:md:py-18">
-            <div className="sticky top-0 flex h-screen flex-col justify-between">
-                <NavBar className="space-y-6" ids={Object.values(HomePageSection)} />
+    const isWide = useMediaQuery(SMALL_SCREEN_MEDIA_QUERY);
 
-                <SocialLinkNav />
-            </div>
+    return (
+        <main className={`${isWide ? "grid grid-cols-[1fr_3fr]" : ""} [&>*]:py-8 [&>*]:sm:py-13 [&>*]:md:py-18`}>
+            {isWide && (
+                <div className="sticky top-0 flex h-screen flex-col justify-between">
+                    <NavBar className="space-y-6" ids={Object.values(HomePageSection)} />
+
+                    <SocialLinkNav />
+                </div>
+            )}
 
             <div className="flex flex-col space-y-18">
                 {Object.entries(SECTION_TO_ELEMENT_MAP).map(([section, el]) => (

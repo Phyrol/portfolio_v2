@@ -9,8 +9,10 @@ import WRONG_TURN from "assets/projects/WRONG_TURN.png";
 import CYBOB from "assets/projects/CYBOB.png";
 import SkillsList from "common/components/SkillsList";
 import TiltElement from "../../../../common/components/TiltElement";
-import {ITCHIO_PROFILE_LINK, Language, Tool} from "common/constants";
+import {ITCHIO_PROFILE_LINK, Language, SMALL_SCREEN_MEDIA_QUERY, Tool} from "common/constants";
 import BulletListItem from "common/components/BulletListItem";
+import {useMediaQuery} from "common/utils";
+import {HomePageSection} from "pages/Home/Home";
 
 enum DetailKey {
     SHIPPED_DATE = "shippedDate",
@@ -161,8 +163,12 @@ const PROJECT_INFO: ProjectInfo[] = [
 ];
 
 const Projects = () => {
+    const isWide = useMediaQuery(SMALL_SCREEN_MEDIA_QUERY);
+
     return (
         <section>
+            {!isWide && <h2 className="section_header">{HomePageSection.PROJECTS}</h2>}
+
             <div className="grid grid-cols-[repeat(auto-fit,_minmax(min(300px,_100%),_1fr))] gap-4">
                 {PROJECT_INFO.map(({title, skills, details, position, downloadLink, thumbnailImage}) => (
                     <TiltElement key={title} enableGlare>

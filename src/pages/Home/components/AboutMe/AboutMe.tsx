@@ -1,4 +1,6 @@
-import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, LINKED_IN_LINK, PHONE_NUMBER} from "common/constants";
+import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, LINKED_IN_LINK, PHONE_NUMBER, SMALL_SCREEN_MEDIA_QUERY} from "common/constants";
+import {useMediaQuery} from "common/utils";
+import {HomePageSection} from "pages/Home/Home";
 
 const ABOUT_ME_DESCRIPTION =
     "Results-driven Frontend Engineer with experience building scalable and intuitive web applications at Amazon. \
@@ -7,6 +9,8 @@ const ABOUT_ME_DESCRIPTION =
                 Adept at problem-solving in ambiguous environments, driving process improvements, and implementing performance-optimized UI features.";
 
 const AboutMe = () => {
+    const isWide = useMediaQuery(SMALL_SCREEN_MEDIA_QUERY);
+
     return (
         <section className="space-y-12">
             <div className="space-y-2">
@@ -33,6 +37,8 @@ const AboutMe = () => {
                     </a>
                 </div>
             </div>
+
+            {!isWide && <h2 className="section_header">{HomePageSection.ABOUT}</h2>}
 
             <p>{ABOUT_ME_DESCRIPTION}</p>
         </section>
