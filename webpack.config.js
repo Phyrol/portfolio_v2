@@ -11,8 +11,8 @@ module.exports = (env, argv) => {
         },
         output: {
             path: path.resolve(__dirname, "dist"),
+            publicPath: "/portfolio_v2/",
             clean: true,
-            publicPath: "/portfolio_v2",
         },
         resolve: {
             extensions: [".tsx", ".ts", ".jsx", ".js"],
