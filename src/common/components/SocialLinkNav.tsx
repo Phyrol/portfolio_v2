@@ -31,14 +31,14 @@ const LINKS_AND_ICONS: LinkAndIcon[] = [
 const SocialLinkNav = () => {
     return (
         <div className="flex">
-            <ul className="[&>*]:after:text-cadet-gray space-y-3">
+            <ul className="space-y-4">
                 {LINKS_AND_ICONS.map(({link, icon}) => (
                     <li key={link}>
                         <a
                             href={link}
                             target="_blank"
                             rel="noreferrer"
-                            className="hover:text-anti-flash-white space-y-6 duration-200 [&>*]:h-6 [&>*]:w-6"
+                            className="hover:text-anti-flash-white space-y-6 duration-200 [&>*]:h-7 [&>*]:w-7"
                         >
                             {icon}
                         </a>

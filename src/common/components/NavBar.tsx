@@ -47,8 +47,8 @@ const NavBar = ({ids, className = ""}: NavBarProps) => {
     return (
         <ol className={className}>
             {ids.map(id => (
-                <li key={id} onClick={() => handleClick(id)}>
-                    <a className="group relative">
+                <li key={id}>
+                    <button className="group relative hover:cursor-pointer" onClick={() => handleClick(id)}>
                         <span
                             className={` ${activeId === id ? "text-anti-flash-white" : "group-hover:text-anti-flash-white"} duration-200`}
                         >
@@ -59,7 +59,7 @@ const NavBar = ({ids, className = ""}: NavBarProps) => {
                                 activeId === id ? "bg-red-rojo w-full" : "bg-red-rojo w-0 group-hover:w-full"
                             }`}
                         />
-                    </a>
+                    </button>
                 </li>
             ))}
         </ol>
