@@ -4,7 +4,7 @@ import Projects from "pages/Home/components/Projects";
 import Experience from "pages/Home/components/Experience";
 import NavBar from "common/components/NavBar";
 import SocialLinkNav from "common/components/SocialLinkNav";
-import {SMALL_SCREEN_MEDIA_QUERY} from "common/constants";
+import {GITHUB_PROFILE_LINK, SMALL_SCREEN_MEDIA_QUERY} from "common/constants";
 import {useMediaQuery} from "common/utils";
 
 export enum HomePageSection {
@@ -32,12 +32,20 @@ const Home = () => {
                 </div>
             )}
 
-            <div className="flex flex-col space-y-24">
-                {Object.entries(SECTION_TO_ELEMENT_MAP).map(([section, el]) => (
-                    <div key={section} id={section} className="scroll-mt-18">
-                        {el}
-                    </div>
-                ))}
+            <div className="flex flex-col space-y-14">
+                <div className="flex flex-col space-y-24">
+                    {Object.entries(SECTION_TO_ELEMENT_MAP).map(([section, el]) => (
+                        <div key={section} id={section} className="scroll-mt-18">
+                            {el}
+                        </div>
+                    ))}
+                </div>
+
+                <footer className="self-center">
+                    <a href={`${GITHUB_PROFILE_LINK}/portfolio_v2`} target={"_blank"} rel="noreferrer" className="hover:text-red-rojo">
+                        <p className="text-base">Built by Bradley Potzka</p>
+                    </a>
+                </footer>
             </div>
         </main>
     );
