@@ -19,7 +19,7 @@ const SECTION_TO_ELEMENT_MAP: {[section in HomePageSection]: ReactNode} = {
 
 const Home = () => {
     return (
-        <main className="grid grid-cols-[1fr_3fr] [&>*]:py-8 [&>*]:sm:py-16 [&>*]:md:py-24">
+        <main className="grid grid-cols-[1fr_3fr] [&>*]:py-8 [&>*]:sm:py-13 [&>*]:md:py-18">
             <div className="sticky top-0 flex h-screen flex-col justify-between">
                 <NavBar className="space-y-6" ids={Object.values(HomePageSection)} />
 
@@ -28,7 +28,7 @@ const Home = () => {
 
             <div className="flex flex-col space-y-18">
                 {Object.entries(SECTION_TO_ELEMENT_MAP).map(([section, el]) => (
-                    <div key={section} id={section}>
+                    <div key={section} id={section} className="scroll-mt-18">
                         {el}
                     </div>
                 ))}
