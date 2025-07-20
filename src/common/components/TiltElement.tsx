@@ -37,7 +37,7 @@ const TiltElement = ({children, enableGlare}: PropsWithChildren<TiltElementProps
             // Glare angle and opacity
             const glareX = (x / rect.width) * 100;
             const glareY = (y / rect.height) * 100;
-            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.10), transparent 50%)`;
+            glare.style.background = `radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.05), transparent 40%)`;
         }
     }, []);
 
@@ -58,7 +58,7 @@ const TiltElement = ({children, enableGlare}: PropsWithChildren<TiltElementProps
                 onMouseLeave={resetTransform}
                 className="h-full rounded-lg transition-transform duration-200 ease-out hover:scale-105"
             >
-                {enableGlare && <div ref={glareRef} className="pointer-events-none absolute inset-0 z-10" />}
+                {enableGlare && <div ref={glareRef} className="pointer-events-none absolute inset-0 z-0" />}
                 {children}
             </div>
         </div>
