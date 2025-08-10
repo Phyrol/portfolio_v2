@@ -32,7 +32,12 @@ module.exports = {
     moduleNameMapper: {
         "\\.(svg)$": "<rootDir>/__mocks__/fileMock.js",
         "\\.(css|less|scss|sass)$": "identity-obj-proxy",
+        "\\.pdf$": "<rootDir>/__mocks__/fileMock.js",
         "\\.(jpg|jpeg|png|gif|webp|avif)$": "<rootDir>/__mocks__/fileMock.js",
+        "^src/": "<rootDir>/$1",
+        "^pages/(.*)$": "<rootDir>/src/pages/$1",
+        "^common/(.*)$": "<rootDir>/src/common/$1",
+        "^assets/(.*)$": "<rootDir>/src/assets/$1",
     },
     testTimeout: 30000,
 };

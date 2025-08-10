@@ -4,6 +4,8 @@ export const LINKED_IN_LINK = "https://www.linkedin.com/in/bradleypotzka/";
 export const EMAIL = "bradleypotzka39@gmail.com";
 export const PHONE_NUMBER = "(480) 440-5081";
 
+export const RESUME_TEXT = "Résumé";
+
 export const SMALL_SCREEN_MEDIA_QUERY = "(min-width: 640px)"; // Tailwind's `sm`
 
 export enum Tool {

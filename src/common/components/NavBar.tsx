@@ -1,18 +1,20 @@
 import {useCallback, useEffect, useState} from "react";
 import resumePDF from "assets/files/Bradley Potzka Resume.pdf";
+import {RESUME_TEXT} from "common/constants";
 
 // The rootMargin for the observer when scrolling to determine which tab should be active
 // e.g. top -50% means shrink the top boundary of the viewport down by 50%, so an element must be much closer to the center to be "visible"
 // top, right, bottom, left
 const OBSERVER_ROOT_MARGIN = "-20% 0px -80% 0px";
 
-interface NavBarProps {
+export interface NavBarProps {
     ids: string[];
 }
 
 const NavBar = ({ids}: NavBarProps) => {
     const [activeId, setActiveId] = useState<string | null>(null);
 
+    // This handles updating the active tab automatically when scrolling through the page depending on which section is in view
     useEffect(() => {
         const observer = new IntersectionObserver(
             entries => {
@@ -31,11 +33,11 @@ const NavBar = ({ids}: NavBarProps) => {
             }
         );
 
-        const elements = ids.map(id => document.getElementById(id)).filter(Boolean);
-        elements.forEach(el => observer.observe(el!));
+        const elements = ids.map(id => document.getElementById(id)).filter(el => !!el);
+        elements.forEach(el => observer.observe(el));
 
         return () => {
-            elements.forEach(el => observer.unobserve(el!));
+            elements.forEach(el => observer.unobserve(el));
         };
     }, [ids]);
 
@@ -51,7 +53,7 @@ const NavBar = ({ids}: NavBarProps) => {
                     <li key={id}>
                         <button className="group relative hover:cursor-pointer" onClick={() => handleClick(id)}>
                             <span
-                                className={` ${activeId === id ? "text-anti-flash-white" : "group-hover:text-anti-flash-white"} duration-200`}
+                                className={`${activeId === id ? "text-anti-flash-white" : "group-hover:text-anti-flash-white"} duration-200`}
                             >
                                 {id}
                             </span>
@@ -67,7 +69,7 @@ const NavBar = ({ids}: NavBarProps) => {
 
             <a href={resumePDF} target={"_blank"} rel="noreferrer">
                 <button className="hover:text-anti-flash-white rounded-md border-2 p-2 hover:cursor-pointer">
-                    <p>Résumé</p>
+                    <p>{RESUME_TEXT}</p>
                 </button>
             </a>
         </div>

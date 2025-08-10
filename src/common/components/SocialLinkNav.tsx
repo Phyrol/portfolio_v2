@@ -7,24 +7,29 @@ import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, LINKED_IN_LINK} from "c
 interface LinkAndIcon {
     link: string;
     icon: React.ReactNode;
+    label: string;
 }
 
-const LINKS_AND_ICONS: LinkAndIcon[] = [
+export const LINK_AND_ICON_LIST: LinkAndIcon[] = [
     {
-        link: EMAIL,
+        link: `mailto:${EMAIL}`,
         icon: <MAIL_ICON />,
+        label: "Email",
     },
     {
         link: GITHUB_PROFILE_LINK,
         icon: <GITHUB_ICON />,
+        label: "GitHub",
     },
     {
         link: ITCHIO_PROFILE_LINK,
         icon: <ITCHIO_ICON />,
+        label: "Itch.io",
     },
     {
         link: LINKED_IN_LINK,
         icon: <LINKEDIN_ICON />,
+        label: "LinkedIn",
     },
 ];
 
@@ -32,12 +37,13 @@ const SocialLinkNav = () => {
     return (
         <div className="flex">
             <ul className="space-y-4">
-                {LINKS_AND_ICONS.map(({link, icon}) => (
+                {LINK_AND_ICON_LIST.map(({link, icon, label}) => (
                     <li key={link}>
                         <a
                             href={link}
                             target="_blank"
                             rel="noreferrer"
+                            aria-label={label}
                             className="hover:text-anti-flash-white space-y-6 duration-200 [&>*]:h-7 [&>*]:w-7"
                         >
                             {icon}

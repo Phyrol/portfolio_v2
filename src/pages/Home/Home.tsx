@@ -35,7 +35,7 @@ const Home = () => {
             <div className="flex flex-col space-y-14">
                 <div className="flex flex-col space-y-24">
                     {Object.entries(SECTION_TO_ELEMENT_MAP).map(([section, el]) => (
-                        <div key={section} id={section} className="scroll-mt-18">
+                        <div key={section} id={section} data-testid={section} className="scroll-mt-18">
                             {el}
                         </div>
                     ))}
