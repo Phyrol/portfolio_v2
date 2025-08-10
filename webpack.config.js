@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = (env, argv) => {
     return {
@@ -65,6 +66,12 @@ module.exports = (env, argv) => {
             ],
         },
         plugins: [
+            new CopyWebpackPlugin({
+                patterns: [
+                    {from: "public/favicon.svg", to: "favicon.svg"},
+                    {from: "public/favicon.ico", to: "favicon.ico"},
+                ],
+            }),
             new HtmlWebpackPlugin({
                 template: "./public/index.html",
             }),
