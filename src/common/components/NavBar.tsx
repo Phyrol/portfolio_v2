@@ -31,11 +31,11 @@ const NavBar = ({ids}: NavBarProps) => {
             }
         );
 
-        const elements = ids.map(id => document.getElementById(id)).filter(Boolean);
-        elements.forEach(el => observer.observe(el!));
+        const elements = ids.map(id => document.getElementById(id)).filter(el => !!el);
+        elements.forEach(el => observer.observe(el));
 
         return () => {
-            elements.forEach(el => observer.unobserve(el!));
+            elements.forEach(el => observer.unobserve(el));
         };
     }, [ids]);
 
@@ -51,7 +51,7 @@ const NavBar = ({ids}: NavBarProps) => {
                     <li key={id}>
                         <button className="group relative hover:cursor-pointer" onClick={() => handleClick(id)}>
                             <span
-                                className={` ${activeId === id ? "text-anti-flash-white" : "group-hover:text-anti-flash-white"} duration-200`}
+                                className={`${activeId === id ? "text-anti-flash-white" : "group-hover:text-anti-flash-white"} duration-200`}
                             >
                                 {id}
                             </span>
