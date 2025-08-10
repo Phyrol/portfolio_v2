@@ -39,7 +39,7 @@ const AboutMe = () => {
             </div>
 
             <div>
-                {!isWide && <h2 className="section_header mb-5">{HomePageSection.ABOUT}</h2>}
+                {!isWide && <h2 className="section-header mb-5">{HomePageSection.ABOUT}</h2>}
 
                 <p>{ABOUT_ME_DESCRIPTION}</p>
             </div>

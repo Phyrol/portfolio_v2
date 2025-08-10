@@ -1,4 +1,4 @@
-import {useMemo, useState} from "react";
+import {useMemo} from "react";
 import {WorkInfo} from "../Experience";
 import UP_RIGHT_ARROW_ICON from "assets/icons/up_right_arrow_icon.svg";
 
@@ -8,7 +8,7 @@ interface WorkHeaderProps extends Pick<WorkInfo, "currentRole" | "company" | "li
 
 const WorkInfoHeader = ({currentRole, company, link, dateRange, shouldUseLink}: WorkHeaderProps) => {
     // This is needed so we can ensure the external link arrow is always next to the last word in the text
-    const [companyWords] = useState(() => {
+    const companyWords = useMemo(() => {
         const allWords = company.trim().split(" ");
 
         const lastWord = allWords.pop();
@@ -18,7 +18,7 @@ const WorkInfoHeader = ({currentRole, company, link, dateRange, shouldUseLink}: 
             lastWord,
             remainingWords,
         };
-    });
+    }, [company]);
 
     const titleContent = useMemo(
         () => (
@@ -35,7 +35,7 @@ const WorkInfoHeader = ({currentRole, company, link, dateRange, shouldUseLink}: 
                 </span>
             </h3>
         ),
-        []
+        [companyWords.lastWord, companyWords.remainingWords, currentRole]
     );
 
     return (

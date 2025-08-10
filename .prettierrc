@@ -8,5 +8,6 @@
     "trailingComma": "es5",
     "quoteProps": "preserve",
     "arrowParens": "avoid",
-    "singleQuote": false
+    "singleQuote": false,
+    "endOfLine": "auto"
 }

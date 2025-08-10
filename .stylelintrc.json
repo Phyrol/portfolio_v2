@@ -2,5 +2,18 @@
     "extends": [
         "stylelint-config-standard",
         "stylelint-config-tailwindcss"
+    ],
+    "rules": {
+        "at-rule-no-deprecated": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "apply"
+                ]
+            }
+        ]
+    },
+    "ignoreFiles": [
+        "src/**/*.{ts,tsx}"
     ]
 }

@@ -114,7 +114,7 @@ const Experience = () => {
 
     return (
         <section>
-            {!isWide && <h2 className="section_header mb-3">{HomePageSection.EXPERIENCE}</h2>}
+            {!isWide && <h2 className="section-header mb-3">{HomePageSection.EXPERIENCE}</h2>}
 
             {WORK_HISTORY.map(({previousRoles, responsibilities, skills, ...headerInfo}, index) => {
                 const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;

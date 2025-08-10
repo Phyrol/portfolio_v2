@@ -1,6 +1,7 @@
 /* TODO: Decide on a font */
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
 @import "tailwindcss";
+
 @tailwind utilities;
 
 @theme {
@@ -12,7 +13,6 @@
     --color-light-space-cadet: #212331;
     --color-space-cadet: #191a25;
     --color-darkest-space-cadet: #151620;
-
     --font-inter: "Inter", sans-serif;
     --font-titillium: "Titillium Web", sans-serif;
     --font-open-sans: "Open Sans", sans-serif;
@@ -38,7 +38,7 @@ header {
         "Helvetica Neue",
         sans-serif;
     font-size: var(--text-xl);
-    line-height: var(--text-xl--line-height);
+    line-height: var(--text-xl-line-height);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -47,7 +47,7 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
-.section_header {
+.section-header {
     @apply text-anti-flash-white;
     @apply text-2xl;
     @apply font-light;
