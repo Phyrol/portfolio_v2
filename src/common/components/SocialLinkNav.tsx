@@ -12,7 +12,7 @@ interface LinkAndIcon {
 
 export const LINK_AND_ICON_LIST: LinkAndIcon[] = [
     {
-        link: EMAIL,
+        link: `mailto:${EMAIL}`,
         icon: <MAIL_ICON />,
         label: "Email",
     },
