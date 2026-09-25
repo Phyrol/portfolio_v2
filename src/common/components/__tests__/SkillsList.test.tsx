@@ -1,11 +1,11 @@
 import {render, screen} from "@testing-library/react";
-import SkillsList, {SkillsListProps} from "../SkillsList";
+import {SkillsList, SkillsListProps} from "../SkillsList";
 
 const mockSkill1 = "mock-skill-1";
 const mockSkill2 = "mock-skill-2";
 const mockSkills = [mockSkill1, mockSkill2];
 
-const getMockProps = (overrides?: Partial<SkillsListProps>): SkillsListProps => ({
+const getMockProps = (overrides: Partial<SkillsListProps> = {}): SkillsListProps => ({
     skills: mockSkills,
     ...overrides,
 });

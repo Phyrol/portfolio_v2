@@ -2,7 +2,7 @@ export interface SkillsListProps {
     skills: string[];
 }
 
-const SkillsList = ({skills}: SkillsListProps) => {
+export const SkillsList = ({skills}: SkillsListProps) => {
     if (!skills.length) {
         return null;
     }
@@ -17,5 +17,3 @@ const SkillsList = ({skills}: SkillsListProps) => {
         </div>
     );
 };
-
-export default SkillsList;
