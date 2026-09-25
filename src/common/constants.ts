@@ -8,11 +8,15 @@ export const RESUME_TEXT = "Résumé";
 
 export const SMALL_SCREEN_MEDIA_QUERY = "(min-width: 640px)"; // Tailwind's `sm`
 
-export enum Tool {
-    CYPRESS = "Cypress",
-    ESLINT = "ESLint",
+export enum GameEngine {
     UNITY = "Unity",
     GM_STUDIO_2 = "GameMaker Studio 2",
+}
+
+export enum Tool {
+    CYPRESS = "Cypress",
+    PUPPETEER = "Puppeteer",
+    ESLINT = "ESLint",
 }
 
 export enum Language {

@@ -3,10 +3,9 @@ import {useMediaQuery} from "common/utils";
 import {HomePageSection} from "pages/Home/constants";
 
 const ABOUT_ME_DESCRIPTION =
-    "Results-driven Frontend Engineer with experience building scalable and intuitive web applications at Amazon. \
-                Demonstrated ability to lead complex projects end-to-end, mentor cross-functional teams, and improve system reliability and customer experience. \
-                Skilled in TypeScript, JavaScript, React, Cypress, and AWS tools. \
-                Adept at problem-solving in ambiguous environments, driving process improvements, and implementing performance-optimized UI features.";
+    "Frontend Engineer with 4+ years of experience building and modernizing customer-facing AWS consoles. \
+        Experienced in owning complex features end-to-end, from technical design and implementation through testing, operational readiness, and launch. \
+        Strong background in React, TypeScript, JavaScript, AWS, frontend architecture, testing infrastructure, and performance optimization, with experience leading cross-team initiatives and modernizing mature codebases.";
 
 export const AboutMe = () => {
     const isWide = useMediaQuery(SMALL_SCREEN_MEDIA_QUERY);
@@ -28,12 +27,12 @@ export const AboutMe = () => {
                         GitHub
                     </a>
 
-                    <a href={ITCHIO_PROFILE_LINK} target={"_blank"} rel="noreferrer">
-                        itch.io
-                    </a>
-
                     <a href={LINKED_IN_LINK} target={"_blank"} rel="noreferrer">
                         LinkedIn
+                    </a>
+
+                    <a href={ITCHIO_PROFILE_LINK} target={"_blank"} rel="noreferrer">
+                        itch.io
                     </a>
                 </div>
             </div>

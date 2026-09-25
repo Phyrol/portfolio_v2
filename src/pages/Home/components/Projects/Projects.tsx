@@ -9,7 +9,7 @@ import WRONG_TURN from "assets/projects/WRONG_TURN.png";
 import CYBOB from "assets/projects/CYBOB.png";
 import {SkillsList} from "common/components/SkillsList";
 import {TiltElement} from "../../../../common/components/TiltElement";
-import {ITCHIO_PROFILE_LINK, Language, SMALL_SCREEN_MEDIA_QUERY, Tool} from "common/constants";
+import {ITCHIO_PROFILE_LINK, Language, SMALL_SCREEN_MEDIA_QUERY, GameEngine} from "common/constants";
 import {BulletListItem} from "common/components/BulletListItem";
 import {useMediaQuery} from "common/utils";
 import {HomePageSection} from "pages/Home/constants";
@@ -44,7 +44,7 @@ interface ProjectInfo {
 const PROJECT_INFO: ProjectInfo[] = [
     {
         title: "Aegis Initiative",
-        skills: [Language.C_SHARP, Tool.UNITY],
+        skills: [Language.C_SHARP, GameEngine.UNITY],
         details: {
             [DetailKey.SHIPPED_DATE]: "2021",
             [DetailKey.TEAM_SIZE]: "20",
@@ -57,7 +57,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
     {
         title: "My Little Dark Lord",
-        skills: [Language.C_SHARP, Tool.UNITY],
+        skills: [Language.C_SHARP, GameEngine.UNITY],
         details: {
             [DetailKey.SHIPPED_DATE]: "2019",
             [DetailKey.TEAM_SIZE]: "4",
@@ -70,7 +70,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
     {
         title: "Night in the Woods",
-        skills: [Language.C_SHARP, Tool.UNITY],
+        skills: [Language.C_SHARP, GameEngine.UNITY],
         details: {
             [DetailKey.SHIPPED_DATE]: "2020",
             [DetailKey.TEAM_SIZE]: "3",
@@ -83,7 +83,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
     {
         title: "Adventure Tim(e)",
-        skills: [Language.GML, Tool.GM_STUDIO_2],
+        skills: [Language.GML, GameEngine.GM_STUDIO_2],
         details: {
             [DetailKey.SHIPPED_DATE]: "2019",
             [DetailKey.TEAM_SIZE]: "1",
@@ -96,7 +96,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
     {
         title: "Lunchbox",
-        skills: [Language.C_SHARP, Tool.UNITY],
+        skills: [Language.C_SHARP, GameEngine.UNITY],
         details: {
             [DetailKey.SHIPPED_DATE]: "2021",
             [DetailKey.TEAM_SIZE]: "4",
@@ -109,7 +109,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
     {
         title: "HyperLoop",
-        skills: [Language.C_SHARP, Tool.UNITY],
+        skills: [Language.C_SHARP, GameEngine.UNITY],
         details: {
             [DetailKey.SHIPPED_DATE]: "2020",
             [DetailKey.TEAM_SIZE]: "5",
@@ -122,7 +122,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
     {
         title: "The Blob",
-        skills: [Language.C_SHARP, Tool.UNITY],
+        skills: [Language.C_SHARP, GameEngine.UNITY],
         details: {
             [DetailKey.SHIPPED_DATE]: "2019",
 
@@ -136,7 +136,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
     {
         title: "Wrong Turn",
-        skills: [Language.C_SHARP, Tool.UNITY],
+        skills: [Language.C_SHARP, GameEngine.UNITY],
         details: {
             [DetailKey.SHIPPED_DATE]: "2020",
             [DetailKey.TEAM_SIZE]: "3",
@@ -149,7 +149,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
     {
         title: "CyBob",
-        skills: [Language.C_SHARP, Tool.UNITY],
+        skills: [Language.C_SHARP, GameEngine.UNITY],
         details: {
             [DetailKey.SHIPPED_DATE]: "2020",
             [DetailKey.TEAM_SIZE]: "3",
