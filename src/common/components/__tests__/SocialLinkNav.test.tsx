@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import SocialLinkNav, {LINK_AND_ICON_LIST} from "../SocialLinkNav";
+import {SocialLinkNav, LINK_AND_ICON_LIST} from "../SocialLinkNav";
 
 describe("SocialLinkNav", () => {
     it("should render each nav item", () => {

@@ -4,7 +4,7 @@ export interface TiltElementProps {
     enableGlare?: boolean;
 }
 
-const TiltElement = ({children, enableGlare}: PropsWithChildren<TiltElementProps>) => {
+export const TiltElement = ({children, enableGlare}: PropsWithChildren<TiltElementProps>) => {
     const elementRef = useRef<HTMLDivElement>(null);
     const glareRef = useRef<HTMLDivElement>(null);
 
@@ -67,5 +67,3 @@ const TiltElement = ({children, enableGlare}: PropsWithChildren<TiltElementProps
         </div>
     );
 };
-
-export default TiltElement;

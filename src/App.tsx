@@ -1,11 +1,11 @@
-import Home from "pages/Home";
+import {Home} from "pages/Home/Home";
 
-const App = () => {
+export const App = () => {
     return (
-        <div className="w-11/13 max-w-7xl">
-            <Home />
-        </div>
+        <main className="flex w-full justify-center">
+            <div className="w-11/13 max-w-7xl">
+                <Home />
+            </div>
+        </main>
     );
 };
-
-export default App;

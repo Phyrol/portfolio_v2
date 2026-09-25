@@ -33,7 +33,7 @@ export const LINK_AND_ICON_LIST: LinkAndIcon[] = [
     },
 ];
 
-const SocialLinkNav = () => {
+export const SocialLinkNav = () => {
     return (
         <div className="flex">
             <ul className="space-y-4">
@@ -54,5 +54,3 @@ const SocialLinkNav = () => {
         </div>
     );
 };
-
-export default SocialLinkNav;

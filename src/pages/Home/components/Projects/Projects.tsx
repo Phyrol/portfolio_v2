@@ -7,12 +7,12 @@ import HYPER_LOOP from "assets/projects/HYPER_LOOP.png";
 import THE_BLOB from "assets/projects/THE_BLOB.png";
 import WRONG_TURN from "assets/projects/WRONG_TURN.png";
 import CYBOB from "assets/projects/CYBOB.png";
-import SkillsList from "common/components/SkillsList";
-import TiltElement from "../../../../common/components/TiltElement";
+import {SkillsList} from "common/components/SkillsList";
+import {TiltElement} from "../../../../common/components/TiltElement";
 import {ITCHIO_PROFILE_LINK, Language, SMALL_SCREEN_MEDIA_QUERY, Tool} from "common/constants";
-import BulletListItem from "common/components/BulletListItem";
+import {BulletListItem} from "common/components/BulletListItem";
 import {useMediaQuery} from "common/utils";
-import {HomePageSection} from "pages/Home";
+import {HomePageSection} from "pages/Home/constants";
 
 enum DetailKey {
     SHIPPED_DATE = "shippedDate",
@@ -162,7 +162,7 @@ const PROJECT_INFO: ProjectInfo[] = [
     },
 ];
 
-const Projects = () => {
+export const Projects = () => {
     const isWide = useMediaQuery(SMALL_SCREEN_MEDIA_QUERY);
 
     return (
@@ -218,5 +218,3 @@ const Projects = () => {
         </section>
     );
 };
-
-export default Projects;

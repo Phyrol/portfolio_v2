@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import NavBar, {NavBarProps} from "../NavBar";
+import {NavBar, NavBarProps} from "../NavBar";
 import {RESUME_TEXT} from "common/constants";
 import userEvent from "@testing-library/user-event";
 
@@ -19,8 +19,8 @@ const mockId1 = "mock-id-1";
 const mockId2 = "mock-id-2";
 const mockIds = [mockId1, mockId2];
 
-const getMockProps = (overrides?: Partial<NavBarProps>): NavBarProps => ({
-    ids: mockIds,
+const getMockProps = (overrides: Partial<NavBarProps> = {}): NavBarProps => ({
+    navIds: mockIds,
     ...overrides,
 });
 

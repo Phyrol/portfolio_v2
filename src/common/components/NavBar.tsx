@@ -8,10 +8,10 @@ import {RESUME_TEXT} from "common/constants";
 const OBSERVER_ROOT_MARGIN = "-20% 0px -80% 0px";
 
 export interface NavBarProps {
-    ids: string[];
+    navIds: string[];
 }
 
-const NavBar = ({ids}: NavBarProps) => {
+export const NavBar = ({navIds}: NavBarProps) => {
     const [activeId, setActiveId] = useState<string | null>(null);
 
     // This handles updating the active tab automatically when scrolling through the page depending on which section is in view
@@ -33,13 +33,13 @@ const NavBar = ({ids}: NavBarProps) => {
             }
         );
 
-        const elements = ids.map(id => document.getElementById(id)).filter(el => !!el);
+        const elements = navIds.map(id => document.getElementById(id)).filter(el => !!el);
         elements.forEach(el => observer.observe(el));
 
         return () => {
             elements.forEach(el => observer.unobserve(el));
         };
-    }, [ids]);
+    }, [navIds]);
 
     const handleClick = useCallback((id: string) => {
         document.getElementById(id)?.scrollIntoView({behavior: "smooth"});
@@ -49,7 +49,7 @@ const NavBar = ({ids}: NavBarProps) => {
     return (
         <div className="space-y-8">
             <ol className="space-y-4">
-                {ids.map(id => (
+                {navIds.map(id => (
                     <li key={id}>
                         <button className="group relative hover:cursor-pointer" onClick={() => handleClick(id)}>
                             <span
@@ -75,5 +75,3 @@ const NavBar = ({ids}: NavBarProps) => {
         </div>
     );
 };
-
-export default NavBar;

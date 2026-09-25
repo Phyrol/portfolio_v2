@@ -1,5 +1,5 @@
 import {render, screen} from "@testing-library/react";
-import BulletListItem from "../BulletListItem";
+import {BulletListItem} from "../BulletListItem";
 
 describe("BulletListItem", () => {
     it("should render the child element", () => {

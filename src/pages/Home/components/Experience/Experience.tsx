@@ -1,10 +1,10 @@
-import BulletListItem from "common/components/BulletListItem";
-import SkillsList from "common/components/SkillsList";
+import {BulletListItem} from "common/components/BulletListItem";
+import {SkillsList} from "common/components/SkillsList";
 import {Framework, Language, Library, RuntimeEnv, SMALL_SCREEN_MEDIA_QUERY, Tool} from "common/constants";
-import WorkInfoHeader from "./WorkInfo/WorkInfoHeader";
+import {WorkInfoHeader} from "./WorkInfo/WorkInfoHeader";
 import {useMediaQuery} from "common/utils";
 import {useCallback, useState} from "react";
-import {HomePageSection} from "pages/Home";
+import {HomePageSection} from "pages/Home/constants";
 
 const EXPERIENCE_GROUP_NAME = "experience-info";
 
@@ -87,7 +87,7 @@ const WORK_HISTORY: WorkInfo[] = [
     },
 ];
 
-const Experience = () => {
+export const Experience = () => {
     const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
     const isWide = useMediaQuery(SMALL_SCREEN_MEDIA_QUERY);
 
@@ -150,5 +150,3 @@ const Experience = () => {
         </section>
     );
 };
-
-export default Experience;

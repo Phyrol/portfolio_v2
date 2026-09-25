@@ -6,7 +6,7 @@ interface WorkHeaderProps extends Pick<WorkInfo, "currentRole" | "company" | "li
     shouldUseLink?: boolean;
 }
 
-const WorkInfoHeader = ({currentRole, company, link, dateRange, shouldUseLink}: WorkHeaderProps) => {
+export const WorkInfoHeader = ({currentRole, company, link, dateRange, shouldUseLink}: WorkHeaderProps) => {
     // This is needed so we can ensure the external link arrow is always next to the last word in the text
     const companyWords = useMemo(() => {
         const allWords = company.trim().split(" ");
@@ -54,5 +54,3 @@ const WorkInfoHeader = ({currentRole, company, link, dateRange, shouldUseLink}: 
         </div>
     );
 };
-
-export default WorkInfoHeader;
