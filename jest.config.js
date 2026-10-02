@@ -40,4 +40,5 @@ module.exports = {
         "^assets/(.*)$": "<rootDir>/src/assets/$1",
     },
     testTimeout: 30000,
+    clearMocks: true,
 };
