@@ -43,6 +43,7 @@ export const Experience = () => {
                 return (
                     <Wrapper
                         key={`${headerInfo.company}-info`}
+                        data-testid={`experience-item`}
                         onMouseEnter={() => handleMouseEnter(index)}
                         onMouseLeave={handleMouseLeave}
                         {...(isWide ? {href: headerInfo.link, target: "_blank", rel: "noreferrer"} : {})}
@@ -57,8 +58,8 @@ export const Experience = () => {
                         ))}
 
                         <ul>
-                            {responsibilities.map((responsibility, index) => (
-                                <BulletListItem key={`responsibility-${index}`}>
+                            {responsibilities.map(responsibility => (
+                                <BulletListItem key={responsibility}>
                                     <p className="text-base">{responsibility}</p>
                                 </BulletListItem>
                             ))}

@@ -2,7 +2,7 @@ import {useMemo} from "react";
 import UP_RIGHT_ARROW_ICON from "assets/icons/up_right_arrow_icon.svg";
 import {WorkInfo} from "pages/Home/constants";
 
-interface WorkInfoHeaderProps extends Pick<WorkInfo, "currentRole" | "company" | "link" | "dateRange"> {
+export interface WorkInfoHeaderProps extends Pick<WorkInfo, "currentRole" | "company" | "link" | "dateRange"> {
     shouldUseLink?: boolean;
 }
 
@@ -26,7 +26,7 @@ export const WorkInfoHeader = ({currentRole, company, link, dateRange, shouldUse
                 <span className="font-medium">{currentRole}</span>
                 <span className="self-center text-sm">&bull;</span>
 
-                <span className="relative inline">
+                <span className="relative inline" data-testid="company">
                     {!!companyWords.remainingWords && `${companyWords.remainingWords} `}
                     <span className="inline-flex">
                         {companyWords.lastWord}

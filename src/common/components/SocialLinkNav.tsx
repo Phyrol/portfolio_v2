@@ -2,7 +2,7 @@ import MAIL_ICON from "assets/icons/mail_icon.svg";
 import GITHUB_ICON from "assets/icons/github_icon.svg";
 import ITCHIO_ICON from "assets/icons/itchio_icon.svg";
 import LINKEDIN_ICON from "assets/icons/linkedin_icon.svg";
-import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, LINKED_IN_LINK} from "common/constants";
+import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, LINKED_IN_PROFILE_LINK} from "common/constants";
 
 interface LinkAndIcon {
     link: string;
@@ -27,7 +27,7 @@ export const SOCIAL_LINK_AND_ICON_LIST: LinkAndIcon[] = [
         ariaLabel: "Itch.io",
     },
     {
-        link: LINKED_IN_LINK,
+        link: LINKED_IN_PROFILE_LINK,
         icon: <LINKEDIN_ICON />,
         ariaLabel: "LinkedIn",
     },

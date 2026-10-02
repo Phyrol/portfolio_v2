@@ -1,4 +1,11 @@
-import {EMAIL, GITHUB_PROFILE_LINK, ITCHIO_PROFILE_LINK, LINKED_IN_LINK, PHONE_NUMBER, SMALL_SCREEN_MEDIA_QUERY} from "common/constants";
+import {
+    EMAIL,
+    GITHUB_PROFILE_LINK,
+    ITCHIO_PROFILE_LINK,
+    LINKED_IN_PROFILE_LINK,
+    PHONE_NUMBER,
+    SMALL_SCREEN_MEDIA_QUERY,
+} from "common/constants";
 import {useMediaQuery} from "common/utils";
 import {HomePageSection} from "pages/Home/constants";
 
@@ -27,7 +34,7 @@ export const AboutMe = () => {
                         GitHub
                     </a>
 
-                    <a href={LINKED_IN_LINK} target={"_blank"} rel="noreferrer">
+                    <a href={LINKED_IN_PROFILE_LINK} target={"_blank"} rel="noreferrer">
                         LinkedIn
                     </a>
 
